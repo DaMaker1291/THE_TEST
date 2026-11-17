@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>St Paul's 16+ Interview — Research File</title>
+<style>
+  :root{
+    --bg:#f6f6f4;
+    --card:#ffffff;
+    --ink:#16181c;
+    --ink2:#3d444e;
+    --muted:#6b7280;
+    --line:#e3e1db;
+    --line2:#d3d0c8;
+    --red:#9b1c2c;
+    --redbg:#fbeef0;
+    --teal:#0b5d52;
+    --tealbg:#eaf4f1;
+    --amber:#8a5a00;
+    --amberbg:#fdf3e0;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--red);text-underline-offset:2px}
+  a:hover{color:#000}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+
+  /* header */
+  header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0 10px;flex-wrap:wrap}
+  .brand{display:flex;flex-direction:column;gap:2px}
+  .brand b{font-size:1.06rem;letter-spacing:-.01em}
+  .brand span{font-size:.78rem;color:var(--muted)}
+  .daybox{font-size:.8rem;color:var(--ink2);background:var(--bg);border:1px solid var(--line);padding:6px 10px;border-radius:8px;white-space:nowrap}
+  .daybox b{color:var(--red)}
+  nav{display:flex;flex-wrap:wrap;gap:3px;padding-bottom:8px}
+  nav button{
+    flex:none;background:none;border:1px solid transparent;border-radius:8px;
+    font-family:inherit;font-size:.83rem;font-weight:500;color:var(--ink2);
+    padding:6px 9px;cursor:pointer;white-space:nowrap;display:flex;gap:6px;align-items:center;
+  }
+  nav button em{font-style:normal;font-size:.7rem;color:var(--muted);font-variant-numeric:tabular-nums}
+  nav button:hover{background:var(--bg);color:var(--ink)}
+  nav button[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  nav button[aria-selected="true"] em{color:#b9bcc2}
+
+  main{padding:26px 0 70px}
+  section{display:none}
+  section.on{display:block}
+
+  .kicker{font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin:0 0 6px}
+  h1{font-size:2rem;line-height:1.15;letter-spacing:-.02em;margin:0 0 8px}
+  .lead{font-size:1.06rem;color:var(--ink2);margin:0 0 22px;max-width:68ch}
+  h3{font-size:1.06rem;margin:0 0 8px;letter-spacing:-.005em}
+  h4{font-size:.95rem;margin:18px 0 6px}
+  p{margin:0 0 12px}
+  ul,ol{margin:0 0 12px;padding-left:20px}
+  li{margin-bottom:7px}
+  small{font-size:.85rem;color:var(--muted)}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 14px}
+  .card > :last-child{margin-bottom:0}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .grid3{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 22px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .stat b{display:block;font-size:1.5rem;line-height:1.1;letter-spacing:-.02em}
+  .stat span{display:block;font-size:.8rem;color:var(--muted);margin-top:4px}
+
+  .note{background:var(--tealbg);border:1px solid #cfe5df;border-left:4px solid var(--teal);border-radius:8px;padding:14px 16px;margin:0 0 16px}
+  .warn{background:var(--amberbg);border:1px solid #f0e0c2;border-left:4px solid var(--amber)}
+  .danger{background:var(--redbg);border:1px solid #f2d3d8;border-left:4px solid var(--red)}
+  .note p:last-child{margin-bottom:0}
+
+  table{width:100%;border-collapse:collapse;font-size:.94rem;margin:0 0 14px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#faf9f7;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  tr:last-child td{border-bottom:0}
+  tbody tr:nth-child(even){background:#fcfcfa}
+
+  /* timeline */
+  .steps{display:grid;gap:12px;margin:0 0 20px}
+  .step{display:grid;grid-template-columns:44px 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .step .n{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+  .step h4{margin:0 0 3px;font-size:1rem}
+  .step .when{font-size:.82rem;color:var(--red);font-weight:600;margin-bottom:4px}
+  .step p{margin:0;font-size:.95rem;color:var(--ink2)}
+
+  /* people */
+  .filters{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px}
+  .filters button{
+    font-family:inherit;font-size:.86rem;background:#fff;border:1px solid var(--line2);
+    color:var(--ink2);padding:7px 13px;border-radius:999px;cursor:pointer;
+  }
+  .filters button:hover{border-color:var(--ink2);color:var(--ink)}
+  .filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+  .person{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+  .person.hide{display:none}
+  .person-head{width:100%;text-align:left;font-family:inherit;background:none;border:0;padding:15px 18px;display:grid;grid-template-columns:48px 1fr auto;gap:3px 14px;cursor:pointer;align-items:start}
+  .person-head:hover{background:#fbfbf9}
+  .ava{grid-column:1;grid-row:1 / span 3;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.92rem;font-weight:700;letter-spacing:.01em;align-self:center}
+  .ava[data-c="maths"]{background:#e6eef7;color:#1f4a75;box-shadow:inset 0 0 0 1px #cfdff0}
+  .ava[data-c="physics"]{background:#efe7f4;color:#5a2d70;box-shadow:inset 0 0 0 1px #ded0e8}
+  .ava[data-c="computing"]{background:#e3f0ed;color:#0b5d52;box-shadow:inset 0 0 0 1px #cbe3dd}
+  .ava[data-c="lead"]{background:#f8e6e9;color:#8c1a29;box-shadow:inset 0 0 0 1px #edd0d6}
+  .p-name{grid-column:2;font-size:1.02rem;font-weight:650;letter-spacing:-.01em}
+  .p-role{grid-column:2;font-size:.83rem;color:var(--muted)}
+  .p-why{grid-column:2;font-size:.9rem;color:var(--ink2);margin-top:4px}
+  .p-why b{color:var(--red);font-weight:600}
+  .chev{grid-row:1 / span 3;grid-column:3;align-self:center;font-size:1.1rem;color:var(--muted);transition:transform .15s}
+  .person.open .chev{transform:rotate(45deg)}
+  .person-body{padding:0 18px 18px;border-top:1px solid var(--line)}
+  .person-body[hidden]{display:none}
+  .kv{display:grid;grid-template-columns:150px 1fr;gap:6px 16px;font-size:.93rem;margin:14px 0 0}
+  .kv dt{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;padding-top:3px}
+  .kv dd{margin:0}
+  .badge{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 7px;border-radius:5px;letter-spacing:.02em;white-space:nowrap}
+  .b-ok{background:var(--tealbg);color:var(--teal)}
+  .b-likely{background:var(--amberbg);color:var(--amber)}
+  .b-unk{background:var(--redbg);color:var(--red)}
+
+  /* Q&A */
+  details.qa{background:#fff;border:1px solid var(--line);border-radius:10px;margin:0 0 10px;overflow:hidden}
+  details.qa summary{cursor:pointer;padding:13px 17px;font-size:.98rem;font-weight:500;list-style:none;display:block;position:relative}
+  details.qa summary::-webkit-details-marker{display:none}
+  details.qa summary:before{content:"+";color:var(--red);font-weight:700;margin-right:9px}
+  details.qa[open] summary:before{content:"–"}
+  details.qa[open] summary{background:#fbfbf9;border-bottom:1px solid var(--line)}
+  .ans{padding:14px 17px;font-size:.95rem;background:#fff}
+  .ans p:last-child{margin-bottom:0}
+  .ans .lbl{display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:10px 0 4px}
+  .math{font-family:var(--mono);font-size:.94em;background:#f2f1ec;padding:1px 5px;border-radius:4px}
+
+  footer{border-top:1px solid var(--line);padding:18px 0 36px;font-size:.83rem;color:var(--muted);background:#fff}
+
+  @media (max-width:640px){
+    body{font-size:16px}
+    h1{font-size:1.6rem}
+    .kv{grid-template-columns:1fr;gap:2px}
+    .kv dt{padding-top:10px}
+    .step{grid-template-columns:1fr}
+    .step .n{width:28px;height:28px;font-size:.85rem}
+    .p-why{font-size:.86rem}
+  }
+  @media print{
+    @page{size:A4;margin:10mm}
+    html,body{background:#fff}
+    header,nav,footer,.testbar,.testhud,.cram-actions,.filters{display:none!important}
+    main{padding:0}
+    .wrap{max-width:none;padding:0}
+    section{display:none!important}
+    section.on{display:block!important;page-break-before:auto}
+    body.print-cram section.on{display:none!important}
+    body.print-cram #s-cram{display:block!important}
+    #s-cram .kicker,#s-cram>h1,#s-cram>.lead{display:none!important}
+    .sheet{box-shadow:none;border:0;border-radius:0;padding:0;margin:0;max-width:none;font-size:9.9pt;line-height:1.35;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .sheet .sh-head b{font-size:12.5pt}
+    .sheet .sh-head .sub{font-size:8.2pt}
+    .sheet .sh-tag{font-size:8.4pt}
+    .sheet .sh-cols{grid-template-columns:1fr 1fr 1fr;gap:6mm}
+    .sheet h4{font-size:8.9pt}
+    .sheet li,.sheet p{break-inside:avoid}
+    .sheet figcaption{font-size:7.7pt}
+    .sheet .formulas{font-size:9pt}
+    .sheet .sh-foot{font-size:8.3pt}
+    .person-body{display:block!important}
+  }
+  /* ===== self-test mode ===== */
+  .testbar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:13px 16px;margin:0 0 20px}
+  .testbar .hint{margin:0;font-size:.9rem;color:var(--ink2);max-width:52ch}
+  .testbar .hint b{color:var(--ink)}
+  .tb-btn{font-family:inherit;font-size:.88rem;font-weight:600;padding:9px 16px;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;white-space:nowrap}
+  .tb-btn:hover{background:#000}
+  .tb-btn[aria-pressed="true"]{background:var(--red);border-color:var(--red)}
+  .tb-btn[aria-pressed="true"]:hover{background:#7d1524}
+
+  .testhud{display:none;position:fixed;right:18px;bottom:18px;z-index:60;background:var(--ink);color:#fff;border-radius:12px;padding:10px 12px;box-shadow:0 8px 24px rgba(0,0,0,.28);align-items:center;gap:12px}
+  .testing .testhud{display:flex}
+  .testhud .time{font-family:var(--mono);font-size:1.1rem;font-variant-numeric:tabular-nums;letter-spacing:.04em;min-width:58px}
+  .testhud .meta{font-size:.74rem;opacity:.7;line-height:1.3}
+  .testhud button{font-family:inherit;font-size:.76rem;background:#333941;color:#fff;border:0;border-radius:7px;padding:6px 10px;cursor:pointer}
+  .testhud button:hover{background:#454c56}
+
+  .reveal{position:absolute;right:14px;top:11px;font-family:inherit;font-size:.78rem;font-weight:650;background:var(--redbg);color:var(--red);border:1px solid #f2d3d8;border-radius:999px;padding:5px 12px;cursor:pointer;white-space:nowrap}
+  .reveal:hover{background:#f7dde1}
+  .testing details.qa summary{padding-right:148px;cursor:default}
+  .testing details.qa summary:before{content:none}
+  .testing details.qa{border-left:3px solid #f0d9dd}
+  .testing details.qa.revealed{border-left-color:var(--teal)}
+  .testing details.qa.revealed .reveal{background:var(--tealbg);color:var(--teal);border-color:#cfe5df}
+
+  @media (max-width:640px){
+    .testhud{right:10px;left:10px;bottom:10px;justify-content:space-between}
+    .testing details.qa summary{padding-right:118px}
+    .reveal{font-size:.72rem;padding:4px 9px;right:10px;top:10px}
+  }
+  @media print{.testbar,.testhud,.reveal{display:none!important}}
+
+  /* ===== cram sheet ===== */
+  .cram-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 18px}
+  .cram-actions span{font-size:.85rem;color:var(--muted)}
+  .sheet{background:#fff;color:#111;border:1px solid var(--line);box-shadow:0 3px 16px rgba(0,0,0,.08);border-radius:6px;padding:16mm 14mm;max-width:210mm;margin:0 auto;font-size:12px;line-height:1.45}
+  .sheet .sh-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:2px solid #111;padding-bottom:7px;margin-bottom:11px}
+  .sheet .sh-head b{font-size:14.5px;letter-spacing:-.01em}
+  .sheet .sh-head .sub{display:block;font-size:10.5px;color:#555;margin-top:3px;line-height:1.4}
+  .sheet .sh-tag{font-size:10px;border:1px solid #111;border-radius:3px;padding:3px 7px;white-space:nowrap;font-weight:700}
+  .sheet .sh-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8mm}
+  .sheet h4{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;margin:0 0 6px;padding-bottom:3px;border-bottom:1px solid #ccc}
+  .sheet h4:not(:first-child){margin-top:12px}
+  .sheet ul,.sheet ol{margin:0 0 8px;padding-left:14px}
+  .sheet li{margin-bottom:3px}
+  .sheet p{margin:0 0 7px}
+  .sheet .fig{display:grid;grid-template-columns:1fr 1fr;gap:6px 8px;margin-bottom:4px}
+  .sheet figure{margin:0}
+  .sheet figure svg{display:block;width:100%;height:auto}
+  .sheet figcaption{font-size:8.6px;color:#333;margin-top:2px;line-height:1.3}
+  .sheet .k{font-family:var(--mono);font-size:.95em}
+  .sheet .laws li{margin-bottom:5px}
+  .sheet .formulas{display:grid;grid-template-columns:1fr 1fr;gap:3px 8px;font-size:10.5px;font-family:var(--mono)}
+  .sheet .sh-foot{border-top:1px solid #bbb;margin-top:10px;padding-top:6px;font-size:9.5px;color:#333;display:flex;justify-content:space-between;gap:12px}
+  @media (max-width:760px){
+    .sheet{padding:20px;font-size:12.5px}
+    .sheet .sh-cols{grid-template-columns:1fr;gap:16px}
+    .sheet .sh-head{flex-direction:column;gap:8px}
+  }
+
+
+  .reading{display:grid;gap:12px;margin:0 0 18px}
+  .r-item{background:#fff;border:1px solid var(--line);border-radius:10px;padding:15px 18px}
+  .r-item h3{font-size:1.02rem;margin:0 0 5px;line-height:1.35}
+  .r-item .meta{font-size:.8rem;color:var(--muted);margin:0 0 9px;line-height:1.45}
+  .r-item p{font-size:.93rem;line-height:1.55;margin:0 0 8px}
+  .r-item .use{font-size:.87rem;line-height:1.5;color:#333;background:#faf9f6;border-left:3px solid #d8d2c6;padding:8px 11px;border-radius:0 6px 6px 0;margin:8px 0 0}
+  .b-off{background:#e4eef9;color:#1d4a77}
+  .b-pod{background:#f0e8f5;color:#5b2c73}
+  .b-art{background:#e2f0ec;color:#0b5c51}
+  .b-oth{background:#f9e7ea;color:#8b1a29}
+  .r-item h3 a{color:inherit;text-decoration:none;border-bottom:1px solid #d9d3c7}
+  .r-item h3 a:hover{color:#0b5c51;border-bottom-color:#0b5c51}
+  .r-item h3 a::after{content:"\2197";font-size:.72em;color:#9a938a;margin-left:4px}
+  .ava[data-c="human"]{background:#efe8d8;color:#5b4715;box-shadow:inset 0 0 0 1px #e0d3b4}
+  .sec-h{font-size:1.22rem;margin:36px 0 10px;padding-top:20px;border-top:1px solid var(--line)}
+  .staff-search{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 18px;font-size:.9rem}
+  .staff-search input{font:inherit;font-size:.9rem;padding:7px 11px;border:1px solid var(--line2);border-radius:7px;min-width:210px}
+  .staff-search #staffcount{color:var(--muted);font-size:.82rem}
+  #stafflist{columns:2;column-gap:28px}
+  @media (max-width:760px){#stafflist{columns:1}}
+  .dept-blk{break-inside:avoid;margin:0 0 15px;padding-bottom:11px;border-bottom:1px dotted #e5e0d6}
+  .dept-blk h4{font-size:.83rem;text-transform:uppercase;letter-spacing:.07em;margin:0 0 5px;display:flex;justify-content:space-between;gap:8px;color:#23201b}
+  .dept-blk h4 span{color:#8d8579;font-weight:600;letter-spacing:0}
+  .dept-blk p{font-size:.81rem;line-height:1.6;margin:0;color:#4b463e}
+  .ladder{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:0 0 16px}
+  .ladder p{font-size:.87rem;line-height:1.65;margin:0 0 7px}
+  .ladder p:last-child{margin-bottom:0}
+  .ev{font-size:.84rem;line-height:1.6;background:#f7f5ef;border:1px solid #e7e1d3;border-radius:8px;padding:10px 12px;margin:0 0 13px;color:#3c3933}
+  .ev b{color:#1b1917}
+  #s-sources a{color:#0b5c51;text-decoration:none;border-bottom:1px solid #cfe0dc}
+  #s-sources a:hover{border-bottom-color:#0b5c51}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <b>St Paul's School — 16+ interview file</b>
+        <span>Barnes, London · entry to Year 12, September 2027</span>
+      </div>
+      <div class="daybox"><b id="days">–</b> days until the interview · Sat 21 Nov 2026</div>
+    </div>
+    <nav role="tablist" aria-label="Sections">
+      <button role="tab" aria-selected="true" data-tab="brief"><em>1</em>What happens</button>
+      <button role="tab" aria-selected="false" data-tab="why"><em>2</em>Why this school</button>
+      <button role="tab" aria-selected="false" data-tab="people"><em>3</em>Who interviews you</button>
+      <button role="tab" aria-selected="false" data-tab="depts"><em>4</em>Departments</button>
+      <button role="tab" aria-selected="false" data-tab="interview"><em>5</em>The interview</button>
+      <button role="tab" aria-selected="false" data-tab="questions"><em>6</em>Questions</button>
+      <button role="tab" aria-selected="false" data-tab="physics"><em>7</em>Physics rescue</button>
+      <button role="tab" aria-selected="false" data-tab="cram"><em>8</em>Cram sheet</button>
+      <button role="tab" aria-selected="false" data-tab="reading"><em>9</em>Reading</button>
+      <button role="tab" aria-selected="false" data-tab="plan"><em>10</em>5-day plan</button>
+      <button role="tab" aria-selected="false" data-tab="sources"><em>11</em>Sources</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ 1 BRIEF ============ -->
+<section id="s-brief" class="on">
+  <p class="kicker">Start here</p>
+  <h1>You have the interview. Here is what happens.</h1>
+  <p class="lead">St Paul's picks 16+ candidates on their four A Level subjects. You sit a paper in each, then you meet the teachers who run those departments. This page is everything you need before Saturday.</p>
+
+  <div class="stats">
+    <div class="stat"><b>~20</b><span>places in Year 12</span></div>
+    <div class="stat"><b>4</b><span>A Levels, all required</span></div>
+    <div class="stat"><b>20–30 min</b><span>per subject interview</span></div>
+    <div class="stat"><b>09:00–13:30</b><span>Saturday 21 November</span></div>
+  </div>
+
+  <h3>The four stages, and where you are</h3>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div>
+      <h4>Application and school reference</h4>
+      <div class="when">Closed 30 September 2026</div>
+      <p>You named four subjects. Your school sent predicted GCSE grades.</p>
+    </div></div>
+    <div class="step"><div class="n">2</div><div>
+      <h4>Written papers</h4>
+      <div class="when">Friday 6 November 2026 — done</div>
+      <p>One paper per A Level subject. Most STEM candidates also sat a numerical problem-solving paper.</p>
+    </div></div>
+    <div class="step"><div class="n">3</div><div>
+      <h4>Interviews — this is you</h4>
+      <div class="when">Saturday 21 November, 09:00–13:30</div>
+      <p>About 40 boys are invited. You get your own classroom and stay in it &mdash; the teachers come to you. One interview per subject with the Head of Department or a senior teacher, plus a general interview; about 20 minutes each. Boarders also get a group interview. You must write a five-question statement beforehand, and they interview you on it. The school will not change the date or time.</p>
+    </div></div>
+    <div class="step"><div class="n">4</div><div>
+      <h4>Offers</h4>
+      <div class="when">Early December 2026</div>
+      <p>Offers are conditional: eight GCSEs at grade 7 or above, six of those at 8 or 9, including your A Level subjects. Accept by 17 December.</p>
+    </div></div>
+  </div>
+
+  <div class="note danger">
+    <p><b>Read this twice.</b> Offers are decided in December, before you have any GCSE results. So the interviewers are guessing what you will get in August. That is why they push you past the syllabus — they want to see grade 8/9 thinking, not grade 7 memory.</p>
+  </div>
+
+  <h3>What each paper was like</h3>
+  <div class="grid">
+    <div class="card">
+      <h3>Maths</h3>
+      <ul>
+        <li>Content is the Edexcel IGCSE syllabus, <b>but not</b> arithmetic series or differentiation.</li>
+        <li>Mostly number and algebra. <b>No calculator</b> from September 2026 entry onwards.</li>
+        <li>Same paper whether you take Maths or Maths plus Further Maths.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Physics</h3>
+      <ul>
+        <li>45 minutes, 41 marks. Calculator allowed, <span class="math">g = 10</span>.</li>
+        <li>Eight multiple choice (16 marks), then one long question (25 marks).</li>
+        <li>The long question was a 0.1 kg ball bouncing in a 1 m room, losing 20% of its energy on each bounce.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Computing</h3>
+      <ul>
+        <li>45 minutes, no calculator.</li>
+        <li>Units and binary, loops, IP addresses, web addresses, a Wi-Fi fill-in-the-blanks.</li>
+        <li>Then three opinion questions worth 4 marks each: AI writing code, switching to Linux, why learn C.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Words you will hear, in plain English</h3>
+  <table>
+    <tbody>
+      <tr><td><b>Eighth Form</b></td><td>Years 12 and 13. Lower Eighth is Year 12, Upper Eighth is Year 13.</td></tr>
+      <tr><td><b>High Master</b></td><td>The headteacher. Currently Sally-Anne Huang.</td></tr>
+      <tr><td><b>Surmaster</b></td><td>Deputy head who runs the senior school day to day. Currently Fran Clough.</td></tr>
+      <tr><td><b>Undermaster</b></td><td>A housemaster. There are eight houses, named after the current housemasters.</td></tr>
+      <tr><td><b>Apposition</b></td><td>The school's annual speech day, held in May. Pupils read out academic papers and an outside judge scores them.</td></tr>
+      <tr><td><b>Further Maths</b></td><td>An extra A Level taken alongside Maths. Harder, and needed for maths-heavy degrees.</td></tr>
+      <tr><td><b>NEA</b></td><td>Non-exam assessment — the programming project that is 20% of A Level Computing.</td></tr>
+      <tr><td><b>EPQ</b></td><td>Extended Project Qualification: a research project you do in Year 12.</td></tr>
+      <tr><td><b>SPGS</b></td><td>St Paul's Girls' School, a separate school nearby. The two share some classes and events.</td></tr>
+      <tr><td><b>CAIE</b></td><td>Cambridge International. The exam board St Paul's uses for A Level Physics.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 2 WHY ============ -->
+<section id="s-why">
+  <p class="kicker">For "why this school?"</p>
+  <h1>What is actually different about St Paul's</h1>
+  <p class="lead">"It's the best school" is the weakest sentence you can say in that room. These are specific, checkable things that are true here and not everywhere. Pick two that genuinely interest you.</p>
+
+  <div class="note warn">
+    <p><b>One test.</b> If your answer could be pasted into an application to any other London boys' school without changing a word, it is a compliment, not an answer.</p>
+  </div>
+
+  <h3>Five things that are genuinely unusual</h3>
+  <div class="grid">
+    <div class="card">
+      <h3>1. It refuses to rush pupils</h3>
+      <p>The school says it plainly: <em>"we do not accelerate our pupils by entering them early for public examinations. Instead we stretch them by providing extra depth."</em></p>
+      <p>In practice: four A Levels, all taught over two years, no AS exams at all, no early GCSEs. This is why interviewers push past the syllabus instead of testing memory.</p>
+    </div>
+    <div class="card">
+      <h3>2. It owns real research equipment</h3>
+      <p>The Physics department has its own <b>scanning electron microscope</b> — a piece of kit most universities would be pleased with. It is used in lessons and sits at the centre of the pupil research group, the Halley Research Community.</p>
+      <p>The school also runs the <b>UK team</b> for the International Young Physicists' Tournament.</p>
+    </div>
+    <div class="card">
+      <h3>3. It is still governed by a 900-year-old City guild</h3>
+      <p>John Colet handed the school to the <b>Mercers' Company</b> in 1509, and it is still the governing body. That is why the school has "Apposition": it began as the guild's inspection of whether the teachers were any good.</p>
+      <p>It had teeth. Two headmasters were sacked at it — one in 1559, one in 1748 for allegedly threatening to "pull the Surmaster by the nose and kick him about the school".</p>
+    </div>
+    <div class="card">
+      <h3>4. Nearly 100 societies, many started by pupils</h3>
+      <p>They meet in the long lunch break. The AI Society was started by a pupil. So when they ask "what would you start here?", it is a real question, not a hypothetical.</p>
+    </div>
+    <div class="card">
+      <h3>5. Maths is the centre of gravity</h3>
+      <p>Over <b>85%</b> of the year take Maths A Level and about <b>45%</b> take Further Maths. There are 27 maths teachers. Corridor whiteboards have problems on them.</p>
+    </div>
+    <div class="card">
+      <h3>And the numbers to back it up</h3>
+      <ul>
+        <li><b>60%</b> of A Level grades were A* in 2026; <b>91.5%</b> were A* or A.</li>
+        <li><b>46</b> pupils got four A*s.</li>
+        <li><b>51%</b> of leavers went to a top-10 world university.</li>
+        <li>Of UK-bound leavers, <b>over a quarter</b> went to Oxford or Cambridge and <b>96%</b> to the Russell Group.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Small facts that land well</h3>
+  <table>
+    <tbody>
+      <tr><td><b>Founded 1509</b></td><td>By John Colet, who spent his whole inheritance on it. Erasmus, the most famous scholar in Europe, helped plan it and wrote textbooks for it.</td></tr>
+      <tr><td><b>"Of all nacions and countres indifferently"</b></td><td>From the original statues, about who the school should teach. Diversity is in the founding document, not added later.</td></tr>
+      <tr><td><b>153 scholars</b></td><td>The number of fish in the biblical miracle. Still the symbolic number of the foundation.</td></tr>
+      <tr><td><b>Houses named after living teachers</b></td><td>The eight houses carry the surnames of the current housemasters, not dead benefactors.</td></tr>
+      <tr><td><b>The Pauline, since 1882</b></td><td>The school magazine, still published. The archive holds books Pepys gave the library.</td></tr>
+      <tr><td><b>The Clarendon nine</b></td><td>Named one of the "nine great public schools" in 1868 — one of only two day schools — then argued it was a private school and was left out of the Act that followed.</td></tr>
+      <tr><td><b>45 acres by the Thames</b></td><td>Boat club, theatre, concert hall, art gallery, engineering workshop, 3G pitch, pool.</td></tr>
+      <tr><td><b>A small boarding house</b></td><td>Unusual for a London day school. It is why boarders get a separate interview and a tour.</td></tr>
+      <tr><td><b>Founder's Awards</b></td><td>About 10% of pupils have a means-tested bursary; 147 awards in 2024–25, some covering more than the full fee.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Old Paulines worth knowing</h3>
+  <table>
+    <thead><tr><th>Who</th><th>What they did</th><th>Why it is useful to you</th></tr></thead>
+    <tbody>
+      <tr><td><b>Edmond Halley</b></td><td>Astronomer; worked out the orbit of the comet named after him.</td><td>He paid for the publication of Newton's <em>Principia</em>. Without him there may have been no Newtonian physics. The physics research group is named after him.</td></tr>
+      <tr><td><b>Roger Cotes</b></td><td>Mathematician; first Plumian Professor at Cambridge.</td><td>He edited the second edition of the <em>Principia</em> and corrected Newton's proofs.</td></tr>
+      <tr><td><b>Thomas Gresham</b></td><td>Financier; founded the Royal Exchange.</td><td>Links the school's City governance to its maths-and-money reputation.</td></tr>
+      <tr><td><b>Milton, Pepys, Marlborough</b></td><td>Poet, diarist, general.</td><td>Marlborough is said to have learned strategy from a book in the school library. Tell it as a story, not a boast.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Three answers that would actually work</h3>
+  <div class="grid">
+    <div class="card">
+      <h3>Maths</h3>
+      <p>"The thing that decides it for me is that the school refuses to accelerate. I've seen what happens when you're pushed on early — you cover more and understand less. The Toller Prize is what I'd want: every Further Maths pupil does a two-week research project and has to lecture on it."</p>
+      <p><small>Uses their own words, then turns them into a plan.</small></p>
+    </div>
+    <div class="card">
+      <h3>Physics</h3>
+      <p>"Ten full-time physicists and two technicians is a real department, and it owns a scanning electron microscope. But the thing I keep coming back to is that St Paul's runs the UK team for the International Young Physicists' Tournament. That isn't a competition you enter casually."</p>
+      <p><small>Names a facility, a commitment, and shows you understood what it means.</small></p>
+    </div>
+    <div class="card">
+      <h3>Computing</h3>
+      <p>"Nearly a hundred societies, and the AI Society was started by a pupil. That's the part I want — not a club to join, a thing I could start. At the moment I'm [what you built], and I'd want to [what you would start]."</p>
+      <p><small>Answers the subject question and the pastoral question at once.</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 PEOPLE ============ -->
+<section id="s-people">
+  <p class="kicker">Who you may meet</p>
+  <h1>The people, and what to say to them</h1>
+  <p class="lead">Seventeen short files on the people who matter most, plus the complete staff list further down this page &mdash; every name the school publishes. Each file opens with why the person matters, then one line saying what is <b>confirmed</b> by a primary source and what is my <b>inference</b>, then the detail. Tap a name to open it.</p>
+
+  <div class="note">
+    <p><b>About the pictures.</b> The school does not publish photographs of individual teachers &mdash; its staff page is a list of names with no portraits. So each card carries a colour-coded monogram instead: blue for maths, purple for physics, green for computing, red for leadership. I have not used stock photos or pictures of other people with the same name, because recognising the wrong face on Saturday is worse than recognising no face.</p>
+  </div>
+
+  <div class="note danger">
+    <p><b>Three traps.</b> First, there are two famous Chris Harrisons — one is a professor at Carnegie Mellon in the USA. Your Head of Computing is a different man. Do not mention the American's research. Second, any "Rate My Professor" page for St Paul's is fake: invented reviews, generated by a website. Ignore it. Third, <b>Dr Adrian Hemery has left</b>: he wrote the school's 2024 Olympiad report, which is why he turns up in searches, and his own profile now lists King's College School in the Bahamas. Do not name-drop him &mdash; the Olympiad training is credited to Dr Stoyanov, whose card replaces his.</p>
+  </div>
+
+  <div class="filters" id="filters">
+    <button data-f="all" aria-pressed="true">All 17</button>
+    <button data-f="maths" aria-pressed="false">Maths</button>
+    <button data-f="physics" aria-pressed="false">Physics</button>
+    <button data-f="computing" aria-pressed="false">Computing</button>
+    <button data-f="lead" aria-pressed="false">Leadership</button>
+    <button data-f="humanities" aria-pressed="false">Philosophy</button>
+  </div>
+
+  <div id="people">
+
+  <article class="person" data-dept="maths">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="maths">LC</span>
+      <span class="p-name">Dr Luis Cereceda</span>
+      <span class="p-role">Teacher of Maths · Adviser for Computing and Maths degrees</span>
+      <span class="p-why"><b>Has an unsolved maths problem named after him.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> the LSE doctorate (2008, <em>Mixing Graph Colourings</em>), the three papers, and his post in the school's maths list. <b>Inferred</b> that an interview with him will feel combinatorial and worst-case &mdash; my reading of his research, not a report of his teaching.</p>
+      <dl class="kv">
+        <dt>Proof it is him</dt><dd>The LSE maths department lists its PhD graduates and where they went. Next to "Dr Luis Cereceda" it says "Mathematics Teacher, St Paul's School, London".</dd>
+        <dt>His PhD</dt><dd>London School of Economics, 2008. Title: <em>Mixing Graph Colourings</em>. Supervisor: Jan van den Heuvel.</dd>
+        <dt>His subject</dt><dd>Graph colouring. Imagine dots joined by lines; colour the dots so joined dots differ. His question: can you get from one valid colouring to another by changing one dot at a time, without ever breaking the rule? And how many steps does it take?</dd>
+        <dt>His papers</dt><dd>"Connectedness of the Graph of Vertex-Colourings" (2005); "Finding Paths between Graph Colourings" (2009, <em>Theoretical Computer Science</em>), which proved the problem is PSPACE-complete for four or more colours — meaning there is no known fast general method; and "Finding Paths Between 3-Colourings" (<em>Journal of Graph Theory</em>, 2011).</dd>
+        <dt>The conjecture</dt><dd><b>Cereceda's conjecture</b> is still open. In plain terms: for a sparse network, if you allow two colours more than the minimum, can you always get between any two colourings in a number of steps proportional to the square of the size of the network? His own thesis showed that with only one extra colour, the number of steps can explode exponentially. That gap is the conjecture.</dd>
+      </dl>
+      <h4>Why this is your best opening</h4>
+      <p>Almost no 16+ candidate knows any of this. If he interviews you, you can say: <em>"I read about Cereceda's conjecture — the quadratic bound for recolouring sparse graphs. Is it still open?"</em> That changes the conversation, because it shows you read about <b>him</b>, not about the school.</p>
+      <p>Be ready to back it up: colourings are the dots of a new network, two colourings are joined if they differ in one place, and you are asking how far apart they are.</p>
+      <h4>What he will probably ask</h4>
+      <p>Combinatorics, not algebra. A counting puzzle (how many ways to colour a cube), a "can you always…?" question where the answer is <em>no</em> and you must find the case that breaks it, or a small network problem where the obvious greedy approach fails. He studies worst cases, so "find where this breaks" is his instinct.</p>
+      <h4>Avoid</h4>
+      <p>Don't claim to have read his paper. Don't recite the four-colour theorem. Don't call computer science "just coding" in front of a man who proves complexity results about it.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="maths">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="maths">IF</span>
+      <span class="p-name">Dr Iva Franjić</span>
+      <span class="p-role">Teacher of Maths · Runs non-US international university applications</span>
+      <span class="p-why"><b>Published mathematician, fifteen years as a university professor.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> Zagreb MMath, MPhil and PhD, associate professor there 2001&ndash;16, four years at Ruthin, at St Paul's since 2020, and the 2012 paper &mdash; all from the school's own staff biography. <b>Inferred</b> the precision about definitions, and the "junior colleague" manner.</p>
+      <dl class="kv">
+        <dt>Degrees</dt><dd>MMath, MPhil and PhD in maths, University of Zagreb.</dd>
+        <dt>Career</dt><dd>Associate Professor of Mathematics at Zagreb from 2001 to 2016. Then four years at Ruthin School in Wales. At St Paul's since 2020.</dd>
+        <dt>Her paper</dt><dd>"On a family of means generated by the Hardy–Littlewood maximal inequality", <em>Numerical Algebra, Control and Optimization</em>, 2012, with three co-authors. It studies a quantity that measures the gap in a famous inequality, proves how it behaves, and uses it to build a new family of averages.</dd>
+        <dt>Her field</dt><dd>Inequalities and averages ("means") — a serious research tradition in pure maths.</dd>
+      </dl>
+      <h4>What to have ready</h4>
+      <p>She has published on <b>averages</b>. So know, cold:</p>
+      <ul>
+        <li>The arithmetic–geometric–harmonic chain, and why the geometric mean is never bigger than the arithmetic mean. It follows from <span class="math">(√a − √b)² ≥ 0</span>.</li>
+        <li>What a "power mean" is, and that it increases as the power increases.</li>
+        <li>Cauchy's mean value theorem, and how it differs from Lagrange's.</li>
+      </ul>
+      <p>If she asks "which is bigger, the arithmetic or geometric mean?", answer it, prove it, and say when they are equal.</p>
+      <h4>How she will sound</h4>
+      <p>Like a university mathematician. She will notice if you say "the average" without saying which one. Expect precision about definitions, and expect to be treated as a junior colleague rather than a pupil.</p>
+      <h4>Avoid</h4>
+      <p>Don't call statistics the easy part. Don't be vague about Maths versus Further Maths — that is the department's main sorting question.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="maths lead">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="maths">AA</span>
+      <span class="p-name">Mr Andy Ashworth-Jones</span>
+      <span class="p-role">Head of Mathematics · Head of the Maths and Computing faculty</span>
+      <span class="p-why"><b>Wrote the document that explains this interview.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> he heads the maths and computing faculty, and that the January 2025 16+ maths post is signed by him. <b>Inferred</b> that the post states department policy &mdash; probable, not proven. His own education and publications are not published anywhere, and I have not invented them.</p>
+      <dl class="kv">
+        <dt>Role</dt><dd>Head of Maths, and head of the faculty that contains Computing. The Head of Computing reports to him.</dd>
+        <dt>His writing</dt><dd>A blog post, "The 16+ Mathematics Entry Exam for St Paul's School" (January 2025), signed by him. It is the single most useful thing written about this interview.</dd>
+        <dt>What he says he wants</dt><dd>Interviews last 20–30 minutes, to test three things: can you use GCSE maths on <em>unfamiliar</em> questions; why you chose the subject; and what problem-solving you have done yourself. He adds: <em>"there is a huge amount of online material on offer and we want to know what you have discovered."</em></dd>
+        <dt>His advice to candidates</dt><dd>Do the last five questions of GCSE papers, because they have "little or no scaffolding" — you have to build the method yourself. Try UKMT Intermediate and Senior Challenge questions. Start a maths club if your school has none.</dd>
+        <dt>Background</dt><dd><span class="badge b-unk">Unconfirmed</span> No public biography, publications, or list of previous schools. He is the most senior person you may meet and the least documented.</dd>
+      </dl>
+      <h4>How he sounds</h4>
+      <p>Like a coach, not an examiner. He explains why a question is hard, admits that not every school offers problem-solving clubs, and gives you the fix rather than the verdict. He is more interested in whether you are becoming a mathematician than in what you have been taught.</p>
+      <h4>What he will ask</h4>
+      <p>The published pattern: a warm-up simplification, then a problem where you must set up the relationship yourself, then "why does that work?". He will almost certainly ask what you have done outside the syllabus — he said in print that he would.</p>
+      <h4>Avoid</h4>
+      <p>Don't quote his blog back at him word for word. Don't offer early GCSEs as an achievement — the department's stated view is the opposite.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="maths">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="maths">ZS</span>
+      <span class="p-name">Dr Zhivko Stoyanov</span>
+      <span class="p-role">Teacher of Maths &middot; the man who actually trains the Olympiad squad</span>
+      <span class="p-why"><b>Named by the school itself as the person preparing its International Maths Olympiad pupils.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> he is in the mathematics department list, and the school's March 2024 news credits him by name with the Olympiad preparation. <b>Inferred</b> that an Olympiad-minded candidate would be his rather than a head of department's. His university and research are unpublished, so I have not guessed at them.</p>
+      <dl class="kv">
+        <dt>The misattribution this fixes</dt><dd>The report of the 2024 IMO training camp was <em>written by</em> Dr Adrian Hemery, who has since left the school &mdash; which is how he came to be credited with the programme. The school credits <b>Stoyanov</b>: &ldquo;the amazing work of Dr Zhivko Stoyanov in preparing these (and a myriad of other) boys for the maths problem solving Olympiads&rdquo;.</dd>
+        <dt>The training regime</dt><dd>Two sessions a week in term time, including more than three hours on Friday afternoons with St Paul's Girls' School pupils attending, plus online sessions that continue through the holidays.</dd>
+        <dt>What it produces</dt><dd>Three pupils invited to the UKMT's IMO training camp at Trinity College Cambridge in 2024, the second year running &mdash; out of roughly the top twenty school mathematicians in the country.</dd>
+      </dl>
+      <h4>The three moves to say out loud</h4>
+      <ul>
+        <li><b>Invariant</b> &mdash; find the thing that never changes.</li>
+        <li><b>Parity</b> &mdash; show one side is even and the other odd, so it is impossible.</li>
+        <li><b>Extremes</b> &mdash; look at the largest or smallest case and find a contradiction.</li>
+      </ul>
+      <p>If you are stuck, name which one you are trying. To a man who teaches three hours of this every Friday, that is the expected vocabulary rather than a trick.</p>
+      <h4>Avoid</h4>
+      <p>Do not name-drop Dr Hemery at him. Do not claim Olympiad medals you did not win &mdash; the school knows exactly who was invited to what.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="maths lead">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="maths">KC</span>
+      <span class="p-name">Mrs Kerilynne Cloete</span>
+      <span class="p-role">Housemaster (Undermaster) · Teacher of Maths</span>
+      <span class="p-why"><b>Likely to be the pastoral interview, not the maths one.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> she teaches maths and is an Undermaster, per the school's staff page, and Cloete House exists. <b>Likely, not confirmed</b>: the earlier career at a Fulham boys' school, a Croydon state school and in Cape Town &mdash; that comes from her own professional profile rather than the school.</p>
+      <dl class="kv">
+        <dt>At St Paul's</dt><dd>Maths teacher since 2018; housemaster since 2022. Cloete House is named after her.</dd>
+        <dt>Before</dt><dd>Assistant Head for pastoral care at a boys' school in Fulham; Head of Maths at a state secondary in Croydon; taught in Cape Town. Also coached debating.</dd>
+      </dl>
+      <h4>What she is judging</h4>
+      <p>Two things at once: can you build an argument, and would she want you in her house at 9pm on a Tuesday? She has run pastoral care in a London boys' school, so she has heard every rehearsed answer about "resilience".</p>
+      <p>Be concrete: one specific time you helped someone, one specific disagreement you handled well, one thing you do that has nothing to do with school.</p>
+      <h4>Avoid</h4>
+      <p>Performing privilege, or apologising for it. She taught in state schools for years. Talk about work.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="maths">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="maths">RB</span>
+      <span class="p-name">Dr Richard Baxter</span>
+      <span class="p-role">Teacher of Maths · Supports the pupil-run Maths Society</span>
+      <span class="p-why"><b>The person to ask about the Maths Society.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> he is in the maths list, and the school's maths page says Maths Society runs &ldquo;with support from Dr Baxter&rdquo;. <b>Inferred</b> nothing. His doctorate, publications and background are genuinely unknown, and this card stays thin rather than filling the gap.</p>
+      <dl class="kv">
+        <dt>What is known</dt><dd>Named as the member of staff who supports the Maths Society, which pupils run and programme themselves. Recent speakers include an Oxford philosopher on logic, a King's College mathematician on continued fractions, and a Cambridge professor on game theory and different sizes of infinity.</dd>
+        <dt>What is not</dt><dd>His doctorate subject, publications, or background. <span class="badge b-unk">Unconfirmed</span></dd>
+      </dl>
+      <h4>A good question to ask him</h4>
+      <p>"How much of the Maths Society is run by pupils rather than staff?" The published answer is that pupils arrange it — so the question invites him to talk about what he actually does.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="physics lead">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="physics">RB</span>
+      <span class="p-name">Dr Ryan Buckingham</span>
+      <span class="p-role">Head of the Science, Technology and Engineering faculty · Was Head of Physics until 2025</span>
+      <span class="p-why"><b>Runs the whole science side of the school.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> he heads the science, technology and engineering faculty, and the school's own February 2025 adverts call him &ldquo;the current Head of Physics, Dr Ryan Buckingham&rdquo;. <b>Inferred</b> that he stepped back from the department to run the faculty &mdash; reasonable, but the school never says so.</p>
+      <dl class="kv">
+        <dt>Role</dt><dd>Leads Physics, Chemistry, Biology and Engineering. Named in the school's February 2025 job advert as "the current Head of Physics, Dr Ryan Buckingham". His successor started in September 2025.</dd>
+        <dt>Education</dt><dd><span class="badge b-likely">Likely</span> LinkedIn shows the University of Oxford. The school uses the title "Dr".</dd>
+        <dt>His own words</dt><dd>"With 110 students signed up for physics in next year's Year 12, we are looking for passionate physicists who can inspire and challenge our bright and inquisitive pupils… an exceptional department with world-class teachers, technicians, facilities and pupils."</dd>
+        <dt>How he describes the department</dt><dd>Ten full-time physicists "covering a wide range of research interests and backgrounds", two full-time technicians, and a culture of "openness and support for each other's teaching" where people "contribute ideas".</dd>
+      </dl>
+      <h4>What that tells you</h4>
+      <p>He thinks structurally. He is asking whether you fit a department of 110 physicists, not whether you can do one calculation. Expect questions about how you work: what you read, what you do when stuck, who you work with.</p>
+      <p>His phrase "bright and inquisitive" is the same standard as the school's "scholarship, curiosity, contribution". Inquisitive is a behaviour — have an example of a question you asked that took a lesson off-course.</p>
+      <h4>Important caveat</h4>
+      <p><b>Settled, as far as public evidence allows:</b> the Head of Physics post was advertised in February 2025 for a September 2025 start, with interviews on 4 March 2025, so it was filled &mdash; but the appointee has <b>never been named</b> in a staff list, a news item, a society page or an advert. There is no public evidence for any individual, so do not guess, and do not assume Dr Buckingham still holds the post: where he is described at all now, it is as faculty head.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="physics">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="physics">BS</span>
+      <span class="p-name">Dr Ben Still</span>
+      <span class="p-role">Teacher of Physics · Director of Partnerships</span>
+      <span class="p-why"><b>Neutrino physicist, prize winner, and author of a LEGO particle-physics book.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> PhD at Sheffield, research at Imperial, fellow at Queen Mary to 2024, four books, the 2012 Institute of Physics award, and Director of Partnerships and Public Benefit from 1 September 2026 &mdash; from his own profile and his publishers. <b>Inferred</b> how he will interview.</p>
+      <dl class="kv">
+        <dt>Research</dt><dd>PhD in experimental particle physics (Sheffield). Researcher at Imperial College. Research fellow at Queen Mary University of London. Worked on <b>T2K</b>, a neutrino experiment in Japan — which makes him a <b>Breakthrough Prize laureate</b>, because the whole collaboration shared it in 2016.</dd>
+        <dt>Other work</dt><dd>Senior scientific adviser to the British Science Association. Won the Institute of Physics' Early Career Communicators' Award in 2012 &mdash; judged by Jim Al-Khalili &mdash; and was an honorary research fellow at Queen Mary until 2024. At St Paul's since 2018, and since <b>1 September 2026</b> Director of Partnerships and Public Benefit: a senior leadership post, held while still teaching physics.</dd>
+        <dt>His book</dt><dd><em>Particle Physics Brick by Brick</em> — about 80 double-page spreads explaining particles using LEGO, where brick size stands for mass. Reviewed by <em>Physics World</em>. He has since written more in the series.</dd>
+        <dt>Where to find him</dt><dd>Bluesky and YouTube, both as "drbenstill".</dd>
+      </dl>
+      <h4>The one idea that will impress him</h4>
+      <p>He says it himself: <em>"understanding the limitations of any scientific analogy is the way that science progresses."</em></p>
+      <p>So when you explain something, explain it <b>and then say where the picture breaks</b>. "Current is like water in a pipe — except the charges don't have a preferred direction, and the pipe isn't empty." Almost no candidate does this, and it is his whole philosophy in one move.</p>
+      <h4>Things he cares about</h4>
+      <ul>
+        <li><b>Neutrinos.</b> T2K fires a beam of neutrinos 295 km through Japan and looks for them changing type on the way. That is how physicists ask whether matter and antimatter behave differently.</li>
+        <li><b>Creativity inside rules.</b> On LEGO: "the best use of LEGO… is creativity."</li>
+        <li><b>Quantum measurement.</b> He names the hardest thing to explain as what "collapse of the wavefunction" means beyond the standard interpretation. Have a view, even a puzzled one.</li>
+        <li><b>LEGO, sincerely.</b> He collects the Architecture sets. Favourite kit: the Saturn V rocket.</li>
+      </ul>
+      <h4>In the room</h4>
+      <p>He is a science communicator by trade, so he will enjoy being asked things. He is not looking for a prodigy; he is looking for someone who finds the subject delightful. If you have read the book, name a spread you liked and say why.</p>
+      <h4>Avoid</h4>
+      <p>Don't say "I love astrophysics" if you mean you like pictures of space — he will ask a follow-up. Don't say the Higgs boson "gives things mass" without qualification; he will ask which mass.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="physics">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="physics">JS</span>
+      <span class="p-name">Mr Joseph Swartzentruber</span>
+      <span class="p-role">Teacher of Physics · Adviser for physics and engineering degrees</span>
+      <span class="p-why"><b>Runs the problem-solving society and an international physics competition.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> he is on the physics list, and school pages show him running the problem-solving society, the Safe Cracking entry and fencing. <b>Likely, not confirmed</b>: Cambridge and the 2017 trainee route &mdash; those come from a professional profile, not the school.</p>
+      <dl class="kv">
+        <dt>Route in</dt><dd>Joined in 2017 as a trainee on the school's two-year teacher training scheme, so he learned to teach inside this school. Has taught GCSE Computer Science as well as Physics.</dd>
+        <dt>Education</dt><dd><span class="badge b-likely">Likely</span> University of Cambridge.</dd>
+        <dt>What he runs</dt><dd>The pupil-led Physics Problem Solving Society. Year 12 entry to <b>Safe Cracking</b>, an international physics and engineering competition run by the Weizmann Institute. He is also Head of Fencing, and runs an exchange with a school in Toyohashi, Japan.</dd>
+      </dl>
+      <h4>What Safe Cracking is, and why it predicts his questions</h4>
+      <p>Teams are given a physical puzzle — classically a safe with a hidden mechanism — and must work out how it works using physics, then explain it. It rewards measurement, guessing, and being willing to be wrong out loud.</p>
+      <p>So expect: "here is a situation. How would you find out what's going on?" Answer in five steps: <b>what do I need to know → what can I measure → what is the relationship → what would prove me wrong → how uncertain am I.</b></p>
+      <h4>Cheap, honest hooks</h4>
+      <p>Fencing and Japan are specific and almost nobody mentions them. One real question about the Japanese exchange is worth more than a speech about loving physics.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="physics">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="physics">12</span>
+      <span class="p-name">The other physicists</span>
+      <span class="p-role">Nine more names, and what their job titles tell you</span>
+      <span class="p-why"><b>You can't know which one you'll get — so prepare for range.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> the twelve names, Fran Clough as Surmaster and Simon Holmes as Director of Assessment and Data. <b>Inferred</b> nothing about Carlos Gane, Louis Pollock, Lee Teo or Lee Cowles. For Simon Parsons there is one solid fact: the International Young Physicists' Tournament application names him as St Paul's UK team leader.</p>
+      <p>The Physics staff are: Ryan Buckingham, Lee Cowles, Charlie Curtis, Fran Clough, Carlos Gane, Simon Holmes, Simon Parsons, Louis Pollock, Ben Still, Joseph Swartzentruber, Lee Teo, Luke Warriner.</p>
+      <h4>Four of these titles are informative</h4>
+      <ul>
+        <li><b>Fran Clough</b> is the Surmaster — the deputy head who runs the senior school. A physicist holds the most senior operational job in the school.</li>
+        <li><b>Simon Holmes</b> is Director of Assessment and Data. Designing assessments is his job.</li>
+        <li><b>Charlie Curtis</b> read at Cambridge (2020–23) and is new to teaching — expect a younger, warmer, more conversational style.</li>
+        <li><b>Luke Warriner</b> also teaches PE.</li>
+        <li><b>Simon Parsons</b> is named as St Paul's UK team leader for the International Young Physicists' Tournament in the 2025 application &mdash; the closest thing to a public leadership signal in the department, though it is not the Head of Physics title.</li>
+      </ul>
+      <p>For Carlos Gane, Louis Pollock, Lee Teo and Lee Cowles there is no public information at all. <span class="badge b-unk">Unconfirmed</span> I have not invented any.</p>
+      <h4>What to do about it</h4>
+      <p>Prepare four shapes and the name stops mattering: one mechanics question, one electricity or waves question, one question about a graph or data, and one "what is physics for?".</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="computing">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="computing">CH</span>
+      <span class="p-name">Mr Chris Harrison</span>
+      <span class="p-role">Head of Computing</span>
+      <span class="p-why"><b>Wrote the sample paper, so his values are readable from it.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> he is Head of Computing &mdash; the school's own adverts carry his initials, cah@ &mdash; and he wrote the sample paper quoted here. <b>Inferred</b> his values from that paper's wording. His own education and industry history are not published; the Carnegie Mellon professor is a different man.</p>
+      <dl class="kv">
+        <dt>Role</dt><dd>Head of Computing. Also credited as "Head of Computer Science, St Paul's School" by a national schools programming competition whose questions he helps write and test.</dd>
+        <dt>What is taught</dt><dd>Year 9: Python for everyone. GCSE: Edexcel. A Level: AQA, taught in <b>C#</b>. 20% of the A Level is a programming project; the rest is two 2½-hour papers, one on a computer.</dd>
+        <dt>His department</dt><dd>Six staff. His own job advert says "several of the members of the Computing department have professional software engineering experience". ICT is a separate department with a separate head — so "Computing" here means computer science, not IT support.</dd>
+        <dt>What he expects</dt><dd>Pupils need "an interest in using computers to solve problems (be they your own coding projects or competition-based challenges)", must be "prepared to be persistent", and "we expect many pupils on this course to do well in the Olympiad". No GCSE Computing is needed.</dd>
+        <dt>Background</dt><dd><span class="badge b-unk">Unconfirmed</span> I could not verify a PhD subject, publications, or industry history. Do not confuse him with the Carnegie Mellon professor of the same name.</dd>
+      </dl>
+      <h4>Read the sample paper as his values</h4>
+      <p>He wrote it. Half the marks are in three opinion questions, and the paper says: <em>"less about objective facts, but a chance to share subjective opinions. Try to be reasonable, knowledgeable, and thoughtful."</em> Those three words are the marking scheme.</p>
+      <p>The technical half is deliberately generous — it tells candidates they are "not expected to complete all sections" because exam boards differ. That is a teacher who has taught pupils from many different school backgrounds and doesn't want to punish them for it.</p>
+      <h4>What to bring</h4>
+      <p>One thing you built and one bug you fixed. One thing about computing that surprised you. A view on each of his three published prompts: AI writing code, moving to Linux, why learn C.</p>
+      <h4>Avoid</h4>
+      <p>Don't call the subject "ICT". Don't claim a language you can't discuss. Don't cite the American professor.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="computing lead">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="computing">KD</span>
+      <span class="p-name">Mrs Katie Douglass</span>
+      <span class="p-role">Director of Engineering and ICT · Head of Engineering · E-Safety Officer</span>
+      <span class="p-why"><b>Trains silversmiths, runs a race team, teaches chainmail at lunch.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> the school's staff biography (2010 arrival, Open University degree, Director of ICT 2016, Director of Engineering 2017, Firefly Racing) and the Onshape case study (robot challenge, scholarship quote). <b>Inferred</b> only the advice about bringing something you made.</p>
+      <dl class="kv">
+        <dt>Route in</dt><dd>Joined in 2010 as a Product Design teacher. Took her degree with the Open University <em>while teaching</em>. Was a professional jeweller before that, trained in silversmithing.</dd>
+        <dt>Progression</dt><dd>Director of ICT in 2016, Director of Engineering in 2017, then Head of Engineering for both the senior and prep schools from 2025.</dd>
+        <dt>Credentials</dt><dd>Microsoft Innovative Educator; Google Certified Trainer; the school's e-safety officer.</dd>
+        <dt>What she runs</dt><dd>Founded <b>Firefly Racing</b> in 2016 — an electric car race team — and met her partner on it. Greenpower Ambassador for London, helping other schools start teams. Runs the First Lego League team and the Engineering Society, which makes the podcast "So, You Want to be an Engineer?".</dd>
+        <dt>Her classroom</dt><dd>An annual "Pop Culture Robot Challenge" where pupils design the Iron Man suit, Daleks, WALL-E or the Infinity Gauntlet. Teaches medieval chainmail at lunchtime. Also advises the Knitting Society and the Warhammer club.</dd>
+      </dl>
+      <h4>Her own words</h4>
+      <p>"We're really big on scholarship — not just learning, but cultivating a desire to learn, being inquisitive."</p>
+      <p>"Any kid who comes here, no matter what they are interested in, no matter how quirky or nerdy or geeky they are, will find their peers here. Because we have so many different clubs and societies that the boys set up themselves."</p>
+      <p>And a detail that says a lot: she uses the design software's history log to notice when a pupil was working at 2am, then asks their tutor to check they are okay.</p>
+      <h4>What she is judging</h4>
+      <p>Not code. <b>Making, curiosity and care.</b> Bring something physical you built, soldered, printed or repaired, and describe the failure honestly. If you have taught someone else to do something, say so — mentoring is her instinct.</p>
+      <p>That "quirky or nerdy or geeky" line is an invitation. Warhammer, knitting, chainmail, robots, racing: this is the interviewer who will be pleased, not puzzled.</p>
+      <h4>Avoid</h4>
+      <p>Don't call engineering "the practical version of physics". Don't sneer at craft — the Head of Engineering is a silversmith.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="computing">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="computing">TV</span>
+      <span class="p-name">Mr Tim Vincent</span>
+      <span class="p-role">Teacher of Computing (from September 2025)</span>
+      <span class="p-why"><b>Came from a real software company. New, so may well be interviewing.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> he joined the computing department in September 2025, per the school's staff list. <b>Likely, not confirmed</b>: the Confluent and solutions-engineering history &mdash; that is from a professional profile and a training-scheme listing, not from the school.</p>
+      <dl class="kv">
+        <dt>Before teaching</dt><dd><span class="badge b-likely">Likely</span> Solutions Engineering Manager for the UK and Ireland at Confluent, the company behind Apache Kafka, 2020–23. Before that he trained people to use smartphone cameras properly.</dd>
+        <dt>Into teaching</dt><dd>Trained through Teach West London in 2024–25, joined St Paul's in September 2025.</dd>
+      </dl>
+      <h4>How to talk to an ex-solutions engineer</h4>
+      <p>That job is explaining technical systems to non-technical people and making them work under real constraints. So he will care whether you can <b>explain</b> clearly, and whether you have ever made something work for someone else.</p>
+      <p>His home ground: queues, latency, throughput, back-pressure, and why order matters when data streams. If you have used an API, a webhook or a message queue in a project, this is the conversation.</p>
+      <h4>Avoid</h4>
+      <p>Bluffing about industry. He will spot someone who watched a video about microservices. Say what you actually did, even if it was small.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="lead">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="lead">SH</span>
+      <span class="p-name">Mrs Sally-Anne Huang</span>
+      <span class="p-role">High Master (headteacher) since 2020</span>
+      <span class="p-why"><b>First woman to lead the school in 500 years. Says education is for the pupils, not the teacher.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> High Master since 2020 and the first woman to hold the post in the school's history; Bolton upbringing, Oxford English, two master's degrees, HMC chair 2020&ndash;21, and the Research Centre opened September 2026. <b>Inferred</b> how she conducts an interview.</p>
+      <dl class="kv">
+        <dt>Background</dt><dd>Grew up in Bolton. Describes herself as "a self-described Hermione Granger as a pupil". Read English at Oxford, later took a master's in children's literature and one in school leadership.</dd>
+        <dt>Career</dt><dd>Taught at Sevenoaks and Roedean; first headship at Kent College Pembury; five years running James Allen's Girls' School in Dulwich; St Paul's from 2020. Chair of the Headmasters' and Headmistresses' Conference in 2020–21. Two sons.</dd>
+        <dt>Recent work</dt><dd>Opened the school's Research Centre for the Education of Boys in September 2026, after hosting a conference on teaching boys in February 2026.</dd>
+        <dt>Values she names</dt><dd>Integrity, humility, resilience, respect, kindness — and she insists these are built on the sports pitch and in the theatre, not only in classrooms.</dd>
+      </dl>
+      <h4>How the school is organised for boys</h4>
+      <p>Boys are in <b>vertical tutor groups</b>: a 13-year-old is in the same group as an 18-year-old. She calls this giving boys a "tribe", with older boys as role models "far more powerful than any adult".</p>
+      <h4>The detail worth remembering</h4>
+      <p>Asked for her genuinely controversial opinion, she says she <b>hates <em>Dead Poets Society</em></b>, because she doesn't believe teachers should walk in as problem-solvers with all the answers: <em>"Education is there for the pupils, not the teacher."</em></p>
+      <p>So do not perform being taught at. Do not flatter the interviewer. Be the pupil who does the thinking.</p>
+      <h4>If she asks about boys' schools</h4>
+      <p>"Better exam results" is the answer she hears every week. Her argument is different: single-sex schooling gives boys a tribe and the freedom to be kind without an audience. That is a better conversation, and it is genuinely hers.</p>
+    </div>
+  </article>
+
+
+  <article class="person" data-dept="lead">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="lead">CG</span>
+      <span class="p-name">Mrs Caroline Gill</span>
+      <span class="p-role">Director of Admissions &middot; former Head of Politics</span>
+      <span class="p-why"><b>She owns the process you are inside. Arguably the most important name on this page.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> Director of Admissions, per the staff page, and the school's own team biography (politics degree, AstraZeneca, Dulwich College, Head of Politics, eight years as an Undermaster). <b>Inferred</b> that she may sit in on interviews &mdash; no source says she does; she may simply run the day.</p>
+      <dl class="kv">
+        <dt>Her job now</dt><dd>Director of Admissions, overseeing the registrar and assistant registrars, with a deliberately small teaching timetable so she can run admissions strategy. The school calls her "a bridge between the teaching and non-teaching side" &mdash; in plain terms, she is the person who decides how the day you are attending is organised.</dd>
+        <dt>Her route</dt><dd>Politics degree, then sales and marketing for AstraZeneca, then retrained as a teacher. Started at St Paul's Juniors, moved to Dulwich College to teach History and Politics, returned to St Paul's as <b>Head of Politics</b>, spent eight years as an Undermaster, then took admissions.</dd>
+        <dt>Where that matters</dt><dd>The 16+ inbox is hers: <em>16plusentry@stpaulsschool.org.uk</em>. Invitations, timings and the day itself are run from her office.</dd>
+      </dl>
+      <h4>If she is in the room</h4>
+      <p>Either she is sitting in as the senior figure who knows the whole cohort, or you are getting a general interview from a historian who taught politics for years. In the second case expect <b>current affairs and institutions</b>: why a school decides what it decides, what a bursary is for, whether selective admission is fair. Have a view, not a slogan.</p>
+      <h4>What not to do</h4>
+      <p>Do not ask her what your chances are. Do not treat her as an administrator &mdash; she taught Politics at A Level and will notice if you cannot discuss anything beyond your own application. And don't email her before Saturday unless it is a genuine logistical question.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="lead">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="lead">TK</span>
+      <span class="p-name">Mr Tom Killick</span>
+      <span class="p-role">Deputy Head &ndash; Co-curricular and Partnerships &middot; Teacher of Maths &middot; rowing coach</span>
+      <span class="p-why"><b>Twelve years as a City trader, then became a teacher. Owns everything that is not a lesson.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> Deputy Head for co-curricular and partnerships, teacher of maths, from the staff page and its team biography (twelve years trading, joined 2012, rowing). <b>Inferred</b> that he is the one who will ask what you contribute, since that is his remit.</p>
+      <dl class="kv">
+        <dt>Before teaching</dt><dd>Twelve years in the City as a trader. Both his parents were university academics, so teaching was always the eventual plan. Joined St Paul's in 2012.</dd>
+        <dt>Now</dt><dd>Deputy Head for co-curricular life and partnerships &mdash; everything outside the academic curriculum &mdash; while still teaching maths. Coaches rowing and is a former President of the Boat Club. Married to a teacher of French and German at the school.</dd>
+        <dt>His first impression of the place</dt><dd>"Energy and enthusiastic activity, scholarly colleagues and pupils who always had something interesting to say."</dd>
+      </dl>
+      <h4>Why he is dangerous in a good way</h4>
+      <p>Most 16+ candidates prepare only for the academic interview, then collapse when asked what they will <b>contribute</b>. That is his entire remit. A list of twelve clubs is worthless; one thing you have genuinely sustained, with a detail about the people in it, is not.</p>
+      <h4>The question worth asking him</h4>
+      <p>He left a trading floor for a school. "What made you actually do it?" is a real question with a real answer, and much better than asking about the timetable.</p>
+      <h4>Avoid</h4>
+      <p>Don't perform enthusiasm for a sport you have never played. Don't call co-curricular "a nice break from work" in front of the man who runs it.</p>
+    </div>
+  </article>
+
+  <article class="person" data-dept="humanities">
+    <button class="person-head" aria-expanded="false">
+      <span class="ava" data-c="human">RD</span>
+      <span class="p-name">Mr Rufus Duits</span>
+      <span class="p-role">Head of Philosophy (Theology &amp; Philosophy department)</span>
+      <span class="p-why"><b>A publishing philosopher who will take one of your sentences apart, politely, for twenty minutes.</b></span>
+      <span class="chev">+</span>
+    </button>
+    <div class="person-body" hidden>
+      <p class="ev"><b>Confirmed</b> Head of Philosophy &mdash; the Institute of Art and Ideas bylines him that way &mdash; in the theology and philosophy staff list, with the articles and debates named on this card. <b>Inferred</b> his interview manner from the method in his writing.</p>
+      <dl class="kv">
+        <dt>His writing</dt><dd>"Is Driving Fossil-Fuelled Cars Immoral?", <em>Philosophy Now</em>, issue 162 (June/July 2024). "The Philosopher and the Ocean", <em>IAI News</em> (2016). A chapter, "Semiotics of Conscience", and academic papers on Heidegger and existential semiotics.</dd>
+        <dt>Beyond the classroom</dt><dd>He has chaired debates for the Institute of Art and Ideas, including one on whether philosophy's fixation with language has held us back.</dd>
+        <dt>The method in his article</dt><dd>He does not pick one ethical theory. He runs the same claim through <b>four</b> &mdash; double effect, utilitarianism, contractualism, virtue ethics &mdash; and shows it fails each one differently. That is a teachable move, and you can borrow it.</dd>
+      </dl>
+      <h4>What he will do to you</h4>
+      <p>Take something you said confidently &mdash; "eating meat is wrong", "AI will take the jobs", "everyone should vote" &mdash; then ask <b>why</b>, offer a counterexample, and ask you to revise. He is not looking for the right answer. He is looking for whether you can hold a position under pressure without either collapsing or digging in stupidly.</p>
+      <h4>The strong move</h4>
+      <p>Say what would change your mind: "I'd change my view if someone showed me X." Then name the strongest objection to your own position before he does. That sentence separates a philosopher from someone with opinions.</p>
+      <h4>Avoid</h4>
+      <p>"Everyone's entitled to their own opinion" &mdash; he will hear a refusal to think. Nietzsche as a slogan. And don't quote a philosopher you have not read.</p>
+    </div>
+  </article>
+
+  </div>
+
+  <div class="note">
+    <p><b>How to use this without being odd.</b> One accurate, curious reference to what someone actually does is a gift. Three in a row is an interrogation. Pick one per conversation, ask about it, then let them lead.</p>
+  </div>
+
+  <h2 class="sec-h">Who is above whom</h2>
+  <p>The school names its senior posts and its faculty heads but <b>not</b> its heads of department &mdash; a distinction worth knowing, because it is the difference between the person who runs maths and the person who runs the faculty maths sits inside.</p>
+  <div class="ladder">
+    <p><b>High Master</b> Sally-Anne Huang &middot; <b>Surmaster</b> (her deputy) Fran Clough</p>
+    <p><b>Deputy Head &ndash; Academic</b> Daniel Pirrie &middot; <b>Deputy Head &ndash; Pastoral and Boarding</b> Nick Watkins &middot; <b>Deputy Head &ndash; Co-curricular and Partnerships</b> Tom Killick &middot; <b>Deputy Head &ndash; Staff Development</b> Rebecca McGreevy</p>
+    <p><b>Director of Admissions</b> Caroline Gill &middot; <b>Director of Teaching and Learning</b> Tahmer Mahmoud &middot; <b>Director of Assessment and Data</b> Simon Holmes &middot; <b>Director of Careers and Universities</b> Jonathan Bennett</p>
+    <p><b>Head of Faculty, Mathematics and Computing</b> Andrew Ashworth-Jones &middot; <b>Science, Technology and Engineering</b> Ryan Buckingham &middot; <b>English and Classics</b> Matthew Gardner &middot; <b>Humanities</b> Alexander Isaac &middot; <b>Languages</b> Alexander Tofts &middot; <b>Creative and Performing Arts</b> Michael Grant</p>
+    <p><b>Chaplain</b> The Rev'd Matthew Knox &middot; <b>Assistant Head, Eighth Form</b> Naomi McLaughlin &middot; <b>Assistant Head, Middle School</b> Douglas Perrin</p>
+  </div>
+  <div class="note warn">
+    <p><b>What this corrects.</b> Ashworth-Jones is listed as <b>head of the faculty</b> that contains maths, not explicitly as Head of Mathematics. He is still the man who wrote the 16+ maths blog, so the advice on his card stands &mdash; but if you meet him, "head of the maths and computing faculty" is the safe description, and the wrong one to guess at is a head of department you have invented. Fran Clough, the Surmaster, is also a physicist, which is worth knowing before you assume the senior person in the room is not a scientist.</p>
+  </div>
+
+  <h2 class="sec-h">The whole staff list</h2>
+  <p class="meta" style="font-size:.82rem;color:#6b665e">Sources for this tab: the school's <em>Teaching Staff</em> page (names and departments, checked today); its <em>Meet the Team</em> page and recruitment packs (the biographies of Douglass, Franji&#263;, Gill, Killick and John); Dr Still's own LinkedIn and his publishers; Dr Franji&#263;'s and Dr Cereceda's published papers; and Mr Duits's own articles and the IAI's byline describing him as Head of Philosophy.</p>
+  <p>Straight from the school's own teaching-staff page for ages 13&ndash;18: <b>165 name entries across 21 departments</b>. Several teachers appear twice &mdash; Tom Killick teaches maths and coaches rowing; Amber Zhang sits in both Maths and Computing &mdash; so there are about 161 people behind those entries. This is all anyone publishes: no biographies, no photographs, and no statement of who teaches which year group.</p>
+  <p><b>Why it is worth knowing.</b> If a name comes up on Saturday and you recognise it as a real member of staff, you look like someone who did their homework. It also stops the obvious error: told you will meet "Mr Holland", you can check whether that is the mathematician in the list below or the historian who wrote <em>Rubicon</em>.</p>
+  <p class="staff-search"><label for="staffq">Find a name</label> <input id="staffq" type="search" placeholder="surname, e.g. Baxter" autocomplete="off"> <span id="staffcount">21 departments</span></p>
+  <div id="stafflist">
+    <div class="dept-blk"><h4>Art <span>6</span></h4><p>Tom Flint &middot; Michael Grant &middot; James Nichols &middot; Michael Page &middot; Victoria Trinder &middot; Jonathan Williams</p></div>
+    <div class="dept-blk"><h4>Biology <span>8</span></h4><p>Jonathan Bennett &middot; Krista Grimes &middot; William Kricka &middot; Alexander Langley &middot; Martyn Powell &middot; Camille Shammas &middot; Rachel Turner &middot; Joe Woodman</p></div>
+    <div class="dept-blk"><h4>Chemistry <span>10</span></h4><p>Martin Fitzpatrick &middot; Madalina Frasinescu &middot; James Gilks &middot; Ann Jeffery &middot; Richard Jones &middot; Tom Lowes &middot; Thomas Orr &middot; Matthew Smith &middot; Suzanne Squire &middot; Fergus Wishart</p></div>
+    <div class="dept-blk"><h4>Classics <span>7</span></h4><p>Thomas Carter &middot; James Harrison &middot; Hannah Mervis &middot; Georgie Penney &middot; Thomas Preece-Smith &middot; Alexander Stewart &middot; Robert Taylor</p></div>
+    <div class="dept-blk"><h4>Computing &amp; ICT <span>6</span></h4><p>Katie Douglass &middot; Neil Gibbons &middot; David Green &middot; Chris Harrison &middot; Tim Vincent &middot; Amber Zhang</p></div>
+    <div class="dept-blk"><h4>Drama <span>5</span></h4><p>Odette Abassi &middot; Christian Anthony &middot; Holly Mazur &middot; Daniel Pirrie &middot; Rosie Thomas</p></div>
+    <div class="dept-blk"><h4>Economics <span>9</span></h4><p>Jack Allen &middot; Anish Badgeri &middot; Oliver Fernie &middot; Annabel Ison &middot; Rebecca McGreevy &middot; Thomas Passmore &middot; Naomi Sandars &middot; Samuel Schmitt &middot; Andy Threadgould</p></div>
+    <div class="dept-blk"><h4>Engineering <span>7</span></h4><p>Edward Bailey &middot; Dominic Boydell &middot; David Emery &middot; Katie Douglass &middot; Arthur Jenkins &middot; Stephen Patterson &middot; Simon Roberts</p></div>
+    <div class="dept-blk"><h4>English <span>9</span></h4><p>Matthew Gardner &middot; Tristram Hager &middot; Nicholas Hudson &middot; Nicholas Kemp &middot; Judith McLaren &middot; Naomi McLaughlin &middot; Stella Pryce &middot; Susannah Thomas &middot; Hannah Warner</p></div>
+    <div class="dept-blk"><h4>Geography <span>5</span></h4><p>Andrew Edwards &middot; Matthew Goldup &middot; Alexander Isaac &middot; Matt Poynter &middot; Nicholas Troen</p></div>
+    <div class="dept-blk"><h4>History <span>9</span></h4><p>Timothy Chase &middot; Daragh Fagan &middot; Gregory Garnett &middot; Charles Irons &middot; Tahmer Mahmoud &middot; Corinna Matlis &middot; Sonya Milanova &middot; Nick Watkins &middot; Oliver Wheatley</p></div>
+    <div class="dept-blk"><h4>Learning Support <span>4</span></h4><p>Dimitrios Alexiou &middot; Helena Howard &middot; Emma Rihll &middot; Warren Turner</p></div>
+    <div class="dept-blk"><h4>Mathematics <span>28</span></h4><p>Sebastian Allon &middot; Andrew Ashworth-Jones &middot; Sam Bailey &middot; Richard Baxter &middot; Luis Cereceda &middot; Paul Charlton &middot; Kerilynne Cloete &middot; Quinn Fickling &middot; Iva Franjic &middot; Nicholas Friend &middot; Benjamin Graf &middot; Gideon Hammond &middot; Tom Holland &middot; Matthew Honnor &middot; Nicole Johnson &middot; Graham Kemp &middot; Tom Killick &middot; Thomas Lyster &middot; Ian McDonnell &middot; Alex Milne &middot; Simon Morris &middot; Melissa Perera &middot; Elizabeth Powell &middot; Amrita Shravat &middot; Zhivko Stoyanov &middot; Morwenna Treleven &middot; Amber Zhang &middot; Yage Zhu</p></div>
+    <div class="dept-blk"><h4>Modern Languages <span>16</span></h4><p>Marion Alouin &middot; Robert Baylis &middot; Magalie Buhlmann-Charette &middot; Francesca Byrne &middot; Kate Cotton &middot; Isabell Jacobson &middot; Carima Jakob &middot; Eliza James &middot; Rebecca Kemal-ur-Rahim &middot; Larissa Lapaire-Adumekwe &middot; Guy Larlham &middot; Douglas Perrin &middot; Erica Schirripa Musa &middot; Silvia Tanzini &middot; Alexander Tofts &middot; Alba Torres Perez</p></div>
+    <div class="dept-blk"><h4>Music <span>4</span></h4><p>Mark Wilderspin &middot; Thomas Evans &middot; Alexander Stobbs &middot; Eloise Yates</p></div>
+    <div class="dept-blk"><h4>Physics <span>12</span></h4><p>Ryan Buckingham &middot; Lee Cowles &middot; Charlie Curtis &middot; Fran Clough &middot; Carlos Gane &middot; Simon Holmes &middot; Simon Parsons &middot; Louis Pollock &middot; Benjamin Still &middot; Joseph Swartzentruber &middot; Lee Teo &middot; Luke Warriner</p></div>
+    <div class="dept-blk"><h4>Politics <span>3</span></h4><p>Caroline Gill &middot; Hugo Nilsson &middot; James Skidmore</p></div>
+    <div class="dept-blk"><h4>PSHE <span>1</span></h4><p>Tyler John</p></div>
+    <div class="dept-blk"><h4>Sport &amp; PE <span>8</span></h4><p>James Blurton &middot; Ryan Blake &middot; Glenn Harrison &middot; Andy Maguire &middot; Roxana Roman &middot; Huey Rossin-Coldwell &middot; Tom Vickers &middot; Luke Warriner</p></div>
+    <div class="dept-blk"><h4>Theology &amp; Philosophy <span>4</span></h4><p>Daniel Brigham &middot; Rufus Duits &middot; Philip Gaydon &middot; Lucie Robathan</p></div>
+    <div class="dept-blk"><h4>Careers &amp; Universities <span>4</span></h4><p>Jonathan Bennett &middot; Niki McInteer &middot; Samuel Namian &middot; Anna Walburger</p></div>
+  </div>
+  <script>
+  (function(){
+    var q=document.getElementById('staffq'); if(!q) return;
+    var blocks=[].slice.call(document.querySelectorAll('#stafflist .dept-blk'));
+    var out=document.getElementById('staffcount');
+    var total=blocks.length;
+    q.addEventListener('input',function(){
+      var v=q.value.trim().toLowerCase(), shown=0;
+      blocks.forEach(function(b){
+        var hit=!v || b.textContent.toLowerCase().indexOf(v)>-1;
+        b.hidden=!hit; if(hit) shown++;
+      });
+      out.textContent = v ? (shown + (shown===1?' department matches':' departments match')) : (total + ' departments');
+    });
+  })();
+  </script>
+
+</section>
+
+<!-- ============ 4 DEPARTMENTS ============ -->
+<section id="s-depts">
+  <p class="kicker">Context</p>
+  <h1>The three departments</h1>
+  <p class="lead">Interviewers notice when you know the department, not just the school. These are the specifics worth having.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Mathematics</h3>
+      <ul>
+        <li><b>Exams:</b> Edexcel IGCSE; OCR A Level; OCR Further Maths, with statistics and mechanics, plus further pure for the strongest and discrete maths for Computer Science pupils.</li>
+        <li><b>Take-up:</b> over 85% do Maths A Level, about 45% do Further Maths.</li>
+        <li><b>Results 2024–25:</b> 90% grade 9 at IGCSE; 64% A* at A Level; 58% A* in Further Maths.</li>
+        <li><b>Competitions:</b> 302 golds in the Senior Maths Challenge; 74 qualified for the British Maths Olympiad round 1; 7 reached round 2, the school's best ever.</li>
+        <li><b>Culture:</b> problems on corridor whiteboards; junior, intermediate and senior problem-solving clubs; a pupil-run Maths Society; the Hans Woyda team competition.</li>
+        <li><b>Toller Prize:</b> every Further Maths pupil does a two-week research project, makes a poster and gives a lecture. Past titles include "The Mathematics Behind Bitcoin" and "The Kutta–Joukowski Theorem".</li>
+        <li><b>Outreach:</b> hosts a UKMT Maths Circle for 54 Year 10 pupils from 27 local schools.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Physics</h3>
+      <ul>
+        <li><b>Exam board:</b> Cambridge International A Level — not AQA or Edexcel. Goes from Newton to quantum theory.</li>
+        <li><b>Department:</b> ten full-time physicists and two full-time technicians. About 110 pupils chose Physics in a recent Year 12.</li>
+        <li><b>The unusual asset:</b> the school's own scanning electron microscope, used in lessons and at the centre of the Halley Research Community.</li>
+        <li><b>Societies:</b> AstroSoc, Halley Research Community, Problem Solving Society, Rocketry Society.</li>
+        <li><b>Competitions:</b> British Physics Olympiad; Beamline for Schools (CERN); Safe Cracking; and the school runs the <b>UK national team</b> for the International Young Physicists' Tournament.</li>
+        <li><b>Trips:</b> CERN, Rutherford Appleton Laboratory, Culham fusion centre.</li>
+        <li><b>Partnerships:</b> a particle physics summer school with Queen Mary University and the Institute of Physics.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Computing</h3>
+      <ul>
+        <li><b>Exams:</b> Edexcel GCSE, chosen by over a third of the year; AQA A Level, taught in C#.</li>
+        <li><b>A Level shape:</b> 20% programming project; 80% two 2½-hour papers, one on a computer.</li>
+        <li><b>Paper 1:</b> programming, data structures, algorithms, and amending code you have studied in advance.</li>
+        <li><b>Paper 2:</b> data representation, how computers work, networks, databases, big data, functional programming, and the consequences of computer use.</li>
+        <li><b>Clubs:</b> British Informatics Olympiad, Bebras, cyber-security competitions, an app-development club, a pupil-started AI Society, robotics through Engineering.</li>
+        <li><b>Published problems:</b> the tour-guide route problem, "how many ways to make £2 from coins", and a ten-pin bowling scorer. All three are worth doing before the interview.</li>
+        <li><b>Note:</b> it is a small option — 22 A Level candidates in one recent year — so staff will know you quickly.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>The school itself, in four facts</h3>
+  <div class="grid">
+    <div class="card"><h3>1509</h3><p>Founded by John Colet, Dean of St Paul's Cathedral, who spent his entire inheritance on it. One of the first schools to teach Greek. Erasmus helped design it.</p></div>
+    <div class="card"><h3>45 acres</h3><p>On the south bank of the Thames at Barnes, west of Hammersmith Bridge. Boat club, theatre, concert hall, art gallery, engineering workshop, cricket pitch, and a RIBA award-winning science building.</p></div>
+    <div class="card"><h3>1,012 pupils</h3><p>About 110 teachers, roughly 9:1. Fees 2026–27: £37,998 day, £57,543 boarding.</p></div>
+    <div class="card"><h3>2026</h3><p>Independent Boys' School of the Year, and The Sunday Times Independent School of the Year for Academic Excellence.</p></div>
+  </div>
+</section>
+
+<!-- ============ 5 INTERVIEW ============ -->
+<section id="s-interview">
+  <p class="kicker">Format</p>
+  <h1>What actually happens on the day</h1>
+  <p class="lead">This is no longer guesswork. Two candidates who went through it describe the same structure: about forty boys invited, five short interviews each, and a sheet of questions put in front of you rather than a conversation about your hobbies.</p>
+
+  <div class="note">
+    <p><b>Source note.</b> Two candidates who were offered places described the day on The Student Room (2024 and 2025 entry). It is reported, not official &mdash; the school publishes only that you are "interviewed by the subject Heads of Department or senior teaching staff".</p>
+    <p><b>What is corroborated:</b> the <b>structure</b> &mdash; about 40 invited, a classroom of your own, teachers coming to you, one interview per subject plus general, roughly 20 minutes, and a sheet of questions rather than a chat. Both accounts agree on that.</p>
+    <p><b>What is single-sourced:</b> the <b>content</b>. The eight-question physics sheet comes from one candidate; the practical at the end comes from a different one; the maths graph sequence and the computing puzzles each come from one. So prepare for the shape with confidence and for the specific questions with caution.</p>
+  </div>
+
+  <h3>The shape of the morning</h3>
+  <ul>
+    <li><b>About 40 boys are invited.</b> You are given your own classroom and <b>stay in it</b> for the whole morning &mdash; the teachers move between rooms, not you.</li>
+    <li><b>One interview per A Level subject</b>, plus a <b>general interview</b>. A Maths / Further Maths / Physics / Computing candidate had five: physics, computer science, maths, general, and boarding.</li>
+    <li><b>About 20 minutes each.</b> In practice most of it is you working, not talking about yourself.</li>
+    <li><b>You are handed a sheet of questions</b> and work through it while the teacher watches and interrupts. One candidate's physics sheet had eight questions; another had five, and he only reached two of them.</li>
+    <li><b>Boarders</b> get a group interview &mdash; three candidates, two interviewers &mdash; plus a tour by Year 12 and 13 pupils.</li>
+  </ul>
+
+  <div class="note danger">
+    <p><b>The thing nobody warns you about.</b> You will not finish the sheet. The candidates who got offers report doing <b>three or four questions</b> in maths and two in physics. The sheet is deliberately longer than the time. Being slow and right beats racing and wrong, and stopping mid-question to explain your method is not failure &mdash; it is what the format expects.</p>
+  </div>
+
+  <h3>The statement you write first, and they interview you on</h3>
+  <p>Before the day you submit a short written statement. This is the actual set of questions, as reported &mdash; five of them, about 100 words each:</p>
+  <ol>
+    <li>Why would you like to come to St Paul's School?</li>
+    <li>What co-curricular activities are you engaged in at your current school, and why do you enjoy them?</li>
+    <li>What would you consider one of your character strengths, with a recent example of when you last displayed it?</li>
+    <li>What do you find a little more tricky, and how could you improve on it?</li>
+    <li>The values of St Paul's are kindness, respect, humility, integrity and resilience. Choose one and describe a situation where you displayed it.</li>
+  </ol>
+  <p>Every claim in that statement is a question you have volunteered for. If you write "I taught myself Python", expect "show me something you built".</p>
+
+  <h3>How the marks are actually decided</h3>
+  <div class="grid3">
+    <div class="card"><h3>Can you think?</h3><p>Unfamiliar questions, worked aloud, with hints taken.</p></div>
+    <div class="card"><h3>Will you cope?</h3><p>Four A Levels at a school that does not accelerate. They are guessing at your August grades.</p></div>
+    <div class="card"><h3>Will you add?</h3><p>"Likely to make a notable contribution to school life" &mdash; the admissions policy's own phrase.</p></div>
+  </div>
+
+  <h3>Five behaviours that move the score</h3>
+  <table>
+    <thead><tr><th>Do this</th><th>It sounds like</th><th>Why it works</th></tr></thead>
+    <tbody>
+      <tr><td><b>Narrate your reading of the question</b></td><td>"It's asking for the acceleration, so I need the mass &mdash; one newton of weight means 0.1 kg."</td><td>They mark thinking, and silence gives them nothing to mark.</td></tr>
+      <tr><td><b>State the formula before substituting</b></td><td>"F = ma, so a = F/m."</td><td>It makes an arithmetic slip survivable and shows the physics, not just the number.</td></tr>
+      <tr><td><b>Take the hint immediately</b></td><td>They say "try completing the square" &mdash; you do it, that second.</td><td>One candidate was rescued by being asked to state Newton's laws. That is the interviewer testing whether you can be taught.</td></tr>
+      <tr><td><b>Say when you're stuck, then pick a strategy</b></td><td>"I can't see it. May I try a small case?"</td><td>Honest stuckness plus a plan reads as maturity. Bluffing is spotted in seconds.</td></tr>
+      <tr><td><b>Have one thing you did yourself</b></td><td>"I built X. The bug that beat me was Y, and I fixed it by Z."</td><td>The maths interview ends with exactly this: "what do you do in maths lessons now?"</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note warn">
+    <p><b>Do not over-rehearse.</b> The school's own guides warn that boys should not be "trained", because interviewers want genuine curiosity and rehearsed answers sound stilted. Use this file for material and habits, not scripts. And ignore the widely-copied "divide 103 by 2" question &mdash; that belongs to the <b>13+</b> interview, not yours.</p>
+  </div>
+</section>
+
+<!-- ============ 6 QUESTIONS ============ -->
+<section id="s-questions">
+  <p class="kicker">Practice</p>
+  <h1>The interview questions</h1>
+  <p class="lead">Everything on this page is from interviews. The written-paper questions that used to be here have been removed &mdash; you have already sat that paper, and it is a different test.</p>
+
+  <div class="testbar">
+    <p class="hint"><b>Self-test.</b> Answers are hidden and the clock starts when you switch on. Work each one on paper, then reveal the worked answer and mark yourself honestly.</p>
+    <button class="tb-btn" type="button" aria-pressed="false">Start self-test</button>
+  </div>
+  <div class="testhud" aria-live="off">
+    <span class="time">00:00</span>
+    <span class="meta">0 revealed</span>
+    <button class="start" type="button">Pause</button>
+    <button class="reset" type="button">Reset</button>
+  </div>
+
+
+  <div class="note danger">
+    <p><b>Read the labels.</b> <b>Reported</b> means a candidate described it after the event. <b>Published</b> means the school printed it as an example. <b>Practice</b> means I wrote it to drill the same skill &mdash; it is not a past question. Nothing here is presented as more certain than it is.</p>
+    <div class="note warn">
+      <p><b>How well evidenced each section is.</b></p>
+      <ul>
+        <li><b>Maths &mdash; strong.</b> Nine questions printed by the Head of Mathematics, plus one complete account of a real interview. Two independent sources.</li>
+        <li><b>Physics &mdash; moderate.</b> One account for the eight-question sheet, a <em>different</em> candidate for the practical at the end. Two sources, different parts.</li>
+        <li><b>Computing &mdash; single source.</b> One candidate, one interview. Treat it as the shape to expect, not a script.</li>
+        <li><b>Further Maths &mdash; single source, and inferred.</b> See the note below.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 style="font-size:1.25rem;margin:26px 0 6px">Maths &mdash; reported from an actual interview</h2>
+  <p>This is the real sequence one candidate was given, in order, in the first fifteen minutes. The last five minutes were "why did you take GCSE maths early, and what do you do in maths lessons now?"</p>
+  <p><b>Further Maths <span class="badge b-unk">single source</span></b> That same candidate took Maths <em>and</em> Further Maths alongside Physics and Computing, and had <b>one</b> maths interview &mdash; five in total including general and boarding. So Further Maths appears to be folded into the maths slot rather than examined separately. This is an <b>inference from one timetable</b>, not a rule &mdash; but the school's own selection page gives it a mechanism: <em>"There will be a single paper in Mathematics. Candidates that have selected single subject Mathematics and those who have also selected Further Mathematics with Mathematics will sit the same paper."</em> The department already treats the two as one stream on paper, so one interview is the consistent picture.</p>
+  <p>Two comparable schools, reported by other candidates, point the same way: at <b>Westminster</b> a candidate taking Maths and Further Maths said "my interview for maths and further maths was combined into one", and at <b>St Paul's Girls'</b> a candidate described interview questions as "intermediate olympiad level, but the teacher will help you through the problem". <span class="badge b-unk">other schools</span> Neither is St Paul's, so use it for expectation only.</p>
+
+  <details class="qa" open><summary>Sketch a quadratic and mark its turning point</summary>
+    <div class="ans">
+      <span class="lbl">Reported · first question</span>
+      <p>They are testing whether you can produce a curve <em>and</em> justify its shape, not whether you remember a formula. Take something like <span class="math">y = x² − 4x + 1</span>.</p>
+      <p><b>Method, out loud:</b> complete the square. <span class="math">y = (x−2)² − 3</span>. So the turning point is <span class="math">(2, −3)</span>, it opens upwards, and the y-intercept is 1.</p>
+      <p><b>Then say what the completed square tells you:</b> the bracket is never negative, so −3 is the minimum. That one sentence is the difference between drawing and understanding.</p>
+      <p><small>If they give you the equation already factorised, the roots are where it crosses; if in completed-square form, the turning point is immediate. Recognise which form you have been handed.</small></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Sketch a cubic</summary>
+    <div class="ans">
+      <span class="lbl">Reported · second question</span>
+      <p>Shape first, then detail. For a positive <span class="math">x³</span> term: comes up from the bottom left, goes down to top right, and has at most three roots and two turning points.</p>
+      <p>Use <span class="math">y = x(x−1)(x+1) = x³ − x</span>: roots at −1, 0, 1; crosses at 0; turning points between them. Say "it must cross the x-axis at least once, because a cubic is continuous and goes from −∞ to +∞".</p>
+      <p><b>Trap:</b> a cubic with a repeated root (<span class="math">y = x²(x−1)</span>) only touches at zero. Mention that and you have shown you know more than the shape.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Sketch <span class="math">x = y² − 3y + 2</span></summary>
+    <div class="ans">
+      <span class="lbl">Reported · third question, and the discriminating one</span>
+      <p>It is a parabola lying on its side, opening towards positive x &mdash; because <span class="math">y</span> is squared and <span class="math">x</span> is not. Most candidates draw it the wrong way round.</p>
+      <p>Factorise: <span class="math">x = (y−1)(y−2)</span>, so it crosses the y-axis at <span class="math">y = 1</span> and <span class="math">y = 2</span>. The vertex is halfway, at <span class="math">y = 1.5</span>, giving <span class="math">x = −0.25</span>. So the whole curve sits to the right of <span class="math">x = −0.25</span>, extending in the +x direction.</p>
+      <p><b>What they are checking:</b> whether you can swap the roles of x and y without panicking. Say "x is now the output" and the sketch follows.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Solve <span class="math">(x² + 4x + 3)(x² + 4x + 4) = 1</span></summary>
+    <div class="ans">
+      <span class="lbl">Reported · fourth question, the hard one</span>
+      <p>Do not expand &mdash; that gives a quartic. Substitute. Let <span class="math">v = x² + 4x + 3</span>, so the second bracket is <span class="math">v + 1</span>:</p>
+      <p><span class="math">v(v + 1) = 1</span>, so <span class="math">v² + v − 1 = 0</span> &mdash; the equation that defines the golden ratio.</p>
+      <p><span class="math">v = (−1 ± √5)/2</span>, i.e. about <span class="math">0.618</span> or <span class="math">−1.618</span>.</p>
+      <p><b>Case 1:</b> <span class="math">x² + 4x + 3 = 0.618</span>, so <span class="math">x² + 4x + 2.382 = 0</span> and <span class="math">x = −2 ± √1.618</span>. Two real roots, about <span class="math">−0.73</span> and <span class="math">−3.27</span>.</p>
+      <p><b>Case 2:</b> <span class="math">x² + 4x + 3 = −1.618</span>, so <span class="math">x² + 4x + 4.618 = 0</span>. The discriminant is negative, so no real roots.</p>
+      <p><b>Answer:</b> two real solutions, <span class="math">x = −2 ± √((1+√5)/2)</span>.</p>
+      <p><small>The whole question is one idea: spot the repeated <span class="math">x² + 4x</span> and substitute. Say that idea out loud before you touch the algebra.</small></p>
+    </div>
+  </details>
+
+  <h2 style="font-size:1.25rem;margin:26px 0 6px">Maths &mdash; published by the department</h2>
+  <p>These nine were printed by the Head of Mathematics as examples of questions used at interview. Worked answers, mine.</p>
+
+  <details class="qa"><summary>Simplify <span class="math">2a⁶(27a¹²b⁴c⁶)^(2/3)</span></summary>
+    <div class="ans">
+      <span class="lbl">Indices</span>
+      <p>Cube root first: <span class="math">27^(1/3) = 3</span>, so <span class="math">27^(2/3) = 9</span>. Multiply each index by <span class="math">2/3</span>: <span class="math">a¹² → a⁸</span>, <span class="math">b⁴ → b^(8/3)</span>, <span class="math">c⁶ → c⁴</span>.</p>
+      <p><b>Answer:</b> <span class="math">18a¹⁴b^(8/3)c⁴</span></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Simplify <span class="math">(4v²−9)/(v²+5v+6) ÷ (4v²−6v)/(v²+3v)</span></summary>
+    <div class="ans">
+      <span class="lbl">Algebraic fractions</span>
+      <p>Factorise: <span class="math">(2v−3)(2v+3)</span>, <span class="math">(v+2)(v+3)</span>, <span class="math">2v(2v−3)</span>, <span class="math">v(v+3)</span>. Flip and cancel.</p>
+      <p><b>Answer:</b> <span class="math">(2v+3) / 2(v+2)</span></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Solve <span class="math">1/f + 3t = 7/2</span> and <span class="math">3/f + 3t = 26/3</span></summary>
+    <div class="ans">
+      <span class="lbl">Simultaneous equations</span>
+      <p>Subtract to kill 3t: <span class="math">2/f = 31/6</span>, so <span class="math">f = 12/31</span>; then <span class="math">t = 11/36</span>.</p>
+      <p><small>The variable is 1/f. Substitute <span class="math">u = 1/f</span> if it helps you see it.</small></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>The line through <span class="math">(p, p−1)</span> and <span class="math">(1−p, 2p)</span> is parallel to <span class="math">2x + 3y + 1 = 0</span>. Find p.</summary>
+    <div class="ans">
+      <span class="lbl">Coordinate geometry</span>
+      <p>Gradient of the given line is <span class="math">−2/3</span>. Set <span class="math">(p+1)/(1−2p) = −2/3</span>, giving <span class="math">3p + 3 = −2 + 4p</span>.</p>
+      <p><b>Answer:</b> <span class="math">p = 5</span></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Make b the subject: <span class="math">2t − ∛((b−3)/t²) = h</span></summary>
+    <div class="ans">
+      <span class="lbl">Rearranging</span>
+      <p>Isolate the root, cube, multiply by <span class="math">t²</span>, add 3.</p>
+      <p><b>Answer:</b> <span class="math">b = t²(2t−h)³ + 3</span></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Two circles of radius r, each centre on the other's edge. Find the area of the isosceles triangle with its apex where they cross.</summary>
+    <div class="ans">
+      <span class="lbl">Circle geometry</span>
+      <p>The two centres and the crossing point form an <b>equilateral triangle of side r</b>.</p>
+      <p><b>Answer:</b> <span class="math">(√3/4)r²</span></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Find x: <span class="math">2^(3+2x) · 4^x · 8^(−x) = 4√2</span></summary>
+    <div class="ans">
+      <span class="lbl">Indices again</span>
+      <p>Everything to base 2: <span class="math">2^(3+2x) · 2^(2x) · 2^(−3x) = 2^(3+x)</span>, and <span class="math">4√2 = 2^2.5</span>.</p>
+      <p><b>Answer:</b> <span class="math">x = −½</span></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>A square sits in a semicircle of radius 10 cm, one side on the diameter, two corners on the arc. Find its area.</summary>
+    <div class="ans">
+      <span class="lbl">Pythagoras</span>
+      <p>Let half the base be <span class="math">a</span>; the top corner is <span class="math">(a, 2a)</span> from the centre, so <span class="math">a² + 4a² = 100</span> and <span class="math">a² = 20</span>. Area <span class="math">= 4a²</span>.</p>
+      <p><b>Answer:</b> <span class="math">80 cm²</span></p>
+      <p><small>The trap is answering <span class="math">a² = 20</span> and stopping.</small></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>A lorry does 660 miles at v mph and returns at v−15 mph. Total time 28½ hours. Find v.</summary>
+    <div class="ans">
+      <span class="lbl">Quadratic from a real situation</span>
+      <p><span class="math">660/v + 660/(v−15) = 57/2</span> gives <span class="math">19v² − 1165v + 6600 = 0</span>, discriminant <span class="math">925²</span>.</p>
+      <p><b>Answer:</b> <span class="math">v = 55</span> mph (the other root is rejected, since <span class="math">v − 15</span> must be positive).</p>
+      <p><small>Check: 12 hours out, 16.5 back, 28.5 total. Always check.</small></p>
+    </div>
+  </details>
+
+  <h2 style="font-size:1.25rem;margin:26px 0 6px">Physics &mdash; the sheet of eight</h2>
+  <p>The reported format: a single sheet, the first three questions multiple choice on forces, then longer ones. The candidate was asked to state Newton's laws when he stalled. A second candidate had <b>a practical at the end</b> and five questions on a sheet.</p>
+
+  <details class="qa" open><summary>A 1 N force acts on an object that weighs 1 N. What is its acceleration?</summary>
+    <div class="ans">
+      <span class="lbl">Reported · first question on the sheet</span>
+      <p>This is the trap, and it is deliberate: <b>1 N is a weight, not a mass.</b></p>
+      <p>Weight <span class="math">= mg</span>, so with <span class="math">g = 10</span>, <span class="math">m = 1/10 = 0.1 kg</span>. Then <span class="math">a = F/m = 1/0.1</span>.</p>
+      <p><b>Answer:</b> <span class="math">10 m/s²</span></p>
+      <p><small>Say the distinction out loud: "its weight is 1 N, so its mass is 0.1 kg". That sentence is the whole question, and it is the most common slip in the room.</small></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>State Newton's three laws</summary>
+    <div class="ans">
+      <span class="lbl">Reported · the rescue question when a candidate froze</span>
+      <p>Have these word-perfect, because they are used as a lifeline:</p>
+      <ol>
+        <li>An object remains at rest, or moves at constant velocity, unless a resultant force acts on it.</li>
+        <li>The resultant force equals mass times acceleration (<span class="math">F = ma</span>) &mdash; more generally, force is the rate of change of momentum.</li>
+        <li>If A exerts a force on B, B exerts an equal and opposite force on A &mdash; and the two act on <b>different</b> bodies.</li>
+      </ol>
+      <p><small>That last clause is what separates a good answer from a recited one: a book on a table has weight and normal contact as a pair only if you are careful about which body each acts on.</small></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>The practical: you are handed apparatus and asked to find something</summary>
+    <div class="ans">
+      <span class="lbl">Reported · five questions, candidate reached two</span>
+      <p>Reported as a practical element at the end of the physics interview. The sheet asks a sequence, not one answer. Whatever the apparatus, the five moves are the same:</p>
+      <ol>
+        <li><b>What are you measuring, and with what?</b> Name the instrument and its resolution.</li>
+        <li><b>What is the relationship?</b> State the equation you will plot, and therefore what the gradient means.</li>
+        <li><b>Which variables?</b> Independent, dependent, and &mdash; the one people forget &mdash; what you hold constant.</li>
+        <li><b>What could go wrong?</b> Parallax, zero error, heating, friction, reaction time, non-uniform wire.</li>
+        <li><b>How would you improve it?</b> Repeat and average, use a larger range, use a set square, use a micrometer.</li>
+      </ol>
+      <p><b>Worked example:</b> find the spring constant. Hang masses, measure extension with a ruler (<span class="math">±1 mm</span>), plot <span class="math">F</span> against <span class="math">x</span>; the gradient is <span class="math">k</span>. Control: same spring, no over-stretching past the elastic limit. Error: reading the bottom of the masses at eye level. Improve: add masses in steps and repeat, take the gradient rather than one reading.</p>
+    </div>
+  </details>
+
+  <h2 style="font-size:1.25rem;margin:26px 0 6px">Computing &mdash; reported, one candidate <span class="badge b-unk">single source</span></h2>
+  <p>One account only, so I have not dressed it up. What it does establish is the <b>style</b>: a friendly interviewer, a logic puzzle first, a harder puzzle second, then a discussion question about computing rather than a programming test. That combination is worth rehearsing even if the exact puzzles differ.</p>
+
+  <details class="qa" open><summary>I think of a number between 1 and 100. You can only ask "higher or lower". How many guesses do you need?</summary>
+    <div class="ans">
+      <span class="lbl">Reported · first question of the computer science interview</span>
+      <p>Seven. Each question halves the remaining range, so you need the smallest <span class="math">n</span> with <span class="math">2ⁿ ≥ 100</span>. Since <span class="math">2⁶ = 64</span> and <span class="math">2⁷ = 128</span>, the answer is 7.</p>
+      <p><b>Say the name:</b> binary search. <b>Say the condition:</b> it only works because the list is ordered. <b>Say the cost:</b> doubling the range adds one guess &mdash; that is why it is <span class="math">O(log n)</span>.</p>
+      <p><small>This is the easiest question of the day and the easiest to over-answer. Give the number, the reason, then stop.</small></p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>A ten-digit number: the first digit says how many 0s it contains, the second how many 1s, and so on. Find it.</summary>
+    <div class="ans">
+      <span class="lbl">Reported · the hard follow-up</span>
+      <p>It is a known puzzle &mdash; an "autobiographical" or self-descriptive number &mdash; and there is exactly one with ten digits: <b>6210001000</b>.</p>
+      <p><b>Check it:</b> six 0s, two 1s, one 2, zero 3s, 4s, 5s, one 6, and no 7s, 8s or 9s.</p>
+      <p><b>How to find it under pressure:</b> the digits must sum to 10 (they count ten positions), which forces most digits to be small. Try putting 6 in the first place because a ten-digit number like this usually has many zeros; then two 1s and one 2 and one 6 follow, and the rest are zeros. Say what you are assuming as you go, because the method is the mark.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Why learn C when Python and Java exist?</summary>
+    <div class="ans">
+      <span class="lbl">Reported · discussion question</span>
+      <p>Because C shows you the machine: manual memory management teaches you what a pointer, the stack and the heap actually are, which is why operating systems, embedded firmware and language runtimes are still written in it. It also makes every higher-level language stop being magic.</p>
+      <p>Earn the last mark with the caveat: you would not choose C for a web app, because safety and speed of development matter &mdash; which is exactly why Rust exists.</p>
+      <p><small>The candidate who reported this answered "it is old but still widely used for security" and got in. A modest, correct answer delivered clearly beats a clever one delivered hesitantly.</small></p>
+    </div>
+  </details>
+
+  <h2 style="font-size:1.25rem;margin:26px 0 6px">The general interview &mdash; reported</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Asked, in this order</h3>
+      <ul>
+        <li>Why do you want to come to St Paul's?</li>
+        <li>What challenges would you face if you joined &mdash; and how would you overcome them?</li>
+        <li>What makes you laugh?</li>
+        <li>What motivates you?</li>
+        <li>What do you do in your free time?</li>
+      </ul>
+      <p><small>The second question is the one to prepare: name a real challenge, then the mechanism you would use. "Everyone will be cleverer than me" is fine <em>if</em> you follow it with what you would actually do about it.</small></p>
+    </div>
+    <div class="card">
+      <h3>The one question that decides it</h3>
+      <p>"What do you do in maths lessons now?" &mdash; asked at the end of the maths interview, after the questions.</p>
+      <p>Have a concrete answer: the club you go to, the book you are reading, the problem you have been stuck on, the competition you did. Not "we do the syllabus".</p>
+      <p>And if you took a GCSE early, expect "why?". The good answer is what you did with the time, not that you were ahead.</p>
+    </div>
+  </div>
+
+  <h2 style="font-size:1.25rem;margin:26px 0 6px">Practice drills</h2>
+  <p>Constructed by me to drill the shapes above &mdash; not past questions.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Graph sketching, 10 minutes</h3>
+      <p>Sketch, labelling intercepts and turning points, out loud:</p>
+      <ul>
+        <li><span class="math">y = x² + 2x − 3</span></li>
+        <li><span class="math">y = (x−2)³</span></li>
+        <li><span class="math">x = y² − 4</span></li>
+        <li><span class="math">y = 1/x</span> and <span class="math">y = 2/x</span></li>
+        <li><span class="math">y = |x − 1|</span></li>
+      </ul>
+      <p><small>The point is speed at recognisable shapes, not beauty.</small></p>
+    </div>
+    <div class="card">
+      <h3>F = ma and weight, 5 minutes</h3>
+      <ul>
+        <li>A 2 kg mass hangs on a string. What is the tension?</li>
+        <li>A 5 N force acts on a 500 g trolley. Acceleration?</li>
+        <li>An object weighs 0.3 N. What is its mass?</li>
+        <li>A 2 kg mass is in a lift accelerating up at 2 m/s². What does the scale read?</li>
+      </ul>
+      <p><small>Answers: 20 N; 10 m/s²; 0.03 kg; 24 N.</small></p>
+    </div>
+    <div class="card">
+      <h3>Estimation, out loud</h3>
+      <ul>
+        <li>How many breaths do you take a day?</li>
+        <li>How thick is one page of a book?</li>
+        <li>How many piano tuners work in London?</li>
+        <li>How many balloons would lift you?</li>
+      </ul>
+      <p><small>They are marking the structure: what you assume, what you can bound, how you check the answer is sane.</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 PHYSICS ============ -->
+<section id="s-physics">
+  <p class="kicker">If physics is your weak subject</p>
+  <h1>Physics, from shaky to survivable in four days</h1>
+  <p class="lead">You are not being asked to know GCSE physics. You are being asked about eight things, on a sheet, out loud. This page teaches those eight things and gives you the sentences to say while you use them.</p>
+
+  <div class="testbar">
+    <p class="hint"><b>Self-test.</b> Answers are hidden and the clock starts when you switch on. Work each one on paper, then reveal the worked answer and mark yourself honestly.</p>
+    <button class="tb-btn" type="button" aria-pressed="false">Start self-test</button>
+  </div>
+  <div class="testhud" aria-live="off">
+    <span class="time">00:00</span>
+    <span class="meta">0 revealed</span>
+    <button class="start" type="button">Pause</button>
+    <button class="reset" type="button">Reset</button>
+  </div>
+
+
+  <div class="note">
+    <p><b>Why this is winnable.</b> The reported physics interview was a sheet of eight questions: three multiple-choice on forces, then longer ones, plus a practical at the end. A second candidate reached two questions and still got through the day. Nobody is expecting a finished script &mdash; they are watching how you move when you are unsure.</p>
+  </div>
+
+  <h3>What actually came up</h3>
+  <ul>
+    <li>A 1 N force on an object that <b>weighs</b> 1 N &mdash; the weight-versus-mass trap.</li>
+    <li>Being asked to <b>state Newton's three laws</b> when the candidate stalled. This is the rescue question, so it is the one thing you must know word-perfect.</li>
+    <li>Multiple-choice <b>forces</b> questions.</li>
+    <li>A <b>practical</b> at the end, with a five-question sheet: variables, readings, what could go wrong.</li>
+  </ul>
+
+  <h3>The eight things to learn</h3>
+  <div class="grid">
+
+    <div class="card">
+      <h3>1. Weight is not mass</h3>
+      <p>Mass is kilograms &mdash; how much stuff. Weight is newtons &mdash; the pull of gravity on that stuff. <span class="math">W = mg</span>, and in this interview <span class="math">g = 10</span>.</p>
+      <p><b>Say:</b> "Its weight is 1 N, so its mass is 0.1 kg."</p>
+      <p><b>Trap:</b> 1 N is <em>never</em> 1 kg. Divide by 10.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. F = ma, and "resultant"</h3>
+      <p>The acceleration depends on the <b>resultant</b> force &mdash; what is left after opposing forces cancel.</p>
+      <p><b>Say:</b> "Resultant force is 5 N, mass 0.5 kg, so <span class="math">a = F/m = 10 m/s²</span>."</p>
+      <p><b>Trap:</b> using the applied force when friction or weight opposes it.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Newton's three laws, word-perfect</h3>
+      <ol>
+        <li>An object stays at rest, or moves at constant velocity, unless a resultant force acts on it.</li>
+        <li><span class="math">F = ma</span>: resultant force equals mass times acceleration.</li>
+        <li>If A pushes B, B pushes A with an equal and opposite force &mdash; on a <b>different</b> body.</li>
+      </ol>
+      <p><b>Trap:</b> forgetting "different body". Weight and normal contact on a book are not a third-law pair.</p>
+    </div>
+
+    <div class="card">
+      <h3>4. Energy is conserved, not used up</h3>
+      <p>Energy moves between stores: kinetic, gravitational, elastic, thermal, chemical. <span class="math">KE = ½mv²</span> and <span class="math">GPE = mgh</span>.</p>
+      <p><b>Say:</b> "The gravitational store empties into the kinetic store, ignoring air resistance."</p>
+      <p><b>Trap:</b> saying energy is "lost". It is transferred to the surroundings, usually thermally.</p>
+    </div>
+
+    <div class="card">
+      <h3>5. Circuits: V = IR</h3>
+      <p>Series: current the same everywhere, voltages add. Parallel: voltage the same, currents add. Power <span class="math">P = VI = I²R</span>.</p>
+      <p><b>Say:</b> "Two resistors in parallel have a smaller combined resistance than either, because there are more paths."</p>
+      <p><b>Trap:</b> adding parallel resistances directly. Use <span class="math">1/R = 1/R₁ + 1/R₂</span>.</p>
+    </div>
+
+    <div class="card">
+      <h3>6. Motion: the four equations</h3>
+      <p><span class="math">v = u + at</span> · <span class="math">s = ut + ½at²</span> · <span class="math">v² = u² + 2as</span> · <span class="math">s = (u+v)t/2</span></p>
+      <p><b>Say:</b> "I'll list what I know: u, v, a, t, s &mdash; then pick the equation missing the thing I don't have."</p>
+      <p><b>Trap:</b> using them when acceleration is not constant. Free fall and braking are fine; a bouncing ball is not.</p>
+    </div>
+
+    <div class="card">
+      <h3>7. Graphs: gradient and area</h3>
+      <p>On a <b>velocity–time</b> graph, the gradient is acceleration and the area underneath is distance. On a <b>distance–time</b> graph, the gradient is speed.</p>
+      <p><b>Say:</b> "The gradient here is the acceleration, so the straight line means constant acceleration."</p>
+      <p><b>Trap:</b> reading a v–t graph as if it showed the journey's shape.</p>
+    </div>
+
+    <div class="card">
+      <h3>8. Any experiment, five questions</h3>
+      <p>Whatever the apparatus: <b>what</b> you measure and with what; the <b>relationship</b> and what the gradient means; <b>independent, dependent, control</b> variables; what could go <b>wrong</b>; how you would <b>improve</b> it.</p>
+      <p><b>Say:</b> "I'd repeat each reading and average, because reaction time is the biggest random error."</p>
+    </div>
+
+  </div>
+
+  <h3>The formula sheet worth memorising</h3>
+  <table>
+    <thead><tr><th>Quantity</th><th>Equation</th><th>What to say when you use it</th></tr></thead>
+    <tbody>
+      <tr><td>Weight</td><td><span class="math">W = mg</span></td><td>"Weight is mass times gravitational field strength, g = 10."</td></tr>
+      <tr><td>Force</td><td><span class="math">F = ma</span></td><td>"The resultant force causes the acceleration."</td></tr>
+      <tr><td>Kinetic energy</td><td><span class="math">KE = ½mv²</span></td><td>"Kinetic energy goes with the square of the speed."</td></tr>
+      <tr><td>Gravitational energy</td><td><span class="math">GPE = mgh</span></td><td>"Energy gained climbing equals weight times height."</td></tr>
+      <tr><td>Speed</td><td><span class="math">v = s/t</span></td><td>"Average speed is distance over time."</td></tr>
+      <tr><td>Acceleration</td><td><span class="math">a = (v−u)/t</span></td><td>"Change in velocity over time."</td></tr>
+      <tr><td>Ohm's law</td><td><span class="math">V = IR</span></td><td>"Voltage across equals current through times resistance."</td></tr>
+      <tr><td>Power</td><td><span class="math">P = VI = I²R</span></td><td>"Power is energy transferred per second."</td></tr>
+      <tr><td>Work</td><td><span class="math">W = Fs</span></td><td>"Work is force times distance moved along the force."</td></tr>
+      <tr><td>Density</td><td><span class="math">ρ = m/V</span></td><td>"Mass per unit volume."</td></tr>
+    </tbody>
+  </table>
+
+  <h3>When you don't know &mdash; the script</h3>
+  <div class="note warn">
+    <p>This is the whole skill, and it works whether or not you can do the physics:</p>
+    <ol>
+      <li><b>Name what is being asked.</b> "You want the acceleration."</li>
+      <li><b>List what you have.</b> "I have a force of 1 N and the object's weight is 1 N."</li>
+      <li><b>Name the equation.</b> "That's F = ma, so I need the mass."</li>
+      <li><b>Convert and substitute, out loud.</b> "Weight 1 N, so mass 0.1 kg. So a = 10."</li>
+      <li><b>Sanity-check and state the assumption.</b> "10 m/s², about g &mdash; that seems right. I'm assuming g = 10 and no friction."</li>
+    </ol>
+    <p>If you truly cannot start: "I don't know this one. Can I talk through what I'd try?" That sentence has never lost anyone a place; a bluff has.</p>
+  </div>
+
+  <h3>Six worked questions, easiest first</h3>
+
+  <details class="qa" open><summary>A 2 kg mass hangs from a string. What is the tension?</summary>
+    <div class="ans">
+      <p>It is not accelerating, so the tension balances the weight. <span class="math">W = mg = 2 × 10 = 20 N</span>.</p>
+      <p><b>Answer: 20 N.</b> Say "the forces balance because it is stationary" &mdash; that is law 1 in action.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>A 5 N force acts on a 500 g trolley. What is its acceleration?</summary>
+    <div class="ans">
+      <p>Convert first: 500 g = 0.5 kg. Then <span class="math">a = F/m = 5/0.5</span>.</p>
+      <p><b>Answer: 10 m/s².</b> The mark is for converting grams, not for the division.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>A 2 kg mass is on a scale in a lift accelerating upwards at 2 m/s². What does the scale read?</summary>
+    <div class="ans">
+      <p>The scale must supply the weight <em>and</em> the extra force to accelerate. <span class="math">N = m(g + a) = 2(10 + 2)</span>.</p>
+      <p><b>Answer: 24 N</b> &mdash; heavier than its 20 N weight. Going down at 2 m/s² it would read 16 N, and in free fall 0 N.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>A car at 20 m/s brakes to rest in 4 s. Find the acceleration and the distance.</summary>
+    <div class="ans">
+      <p><span class="math">a = (v − u)/t = (0 − 20)/4 = −5 m/s²</span>.</p>
+      <p>Distance with constant acceleration: <span class="math">s = (u + v)t/2 = (20 + 0) × 4/2</span>.</p>
+      <p><b>Answer: −5 m/s² (a deceleration) and 40 m.</b> Or use the area under the v–t graph &mdash; a triangle, half base times height.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>3 Ω and 6 Ω in parallel across 12 V. Find the total resistance and the current in each branch.</summary>
+    <div class="ans">
+      <p><span class="math">1/R = 1/3 + 1/6 = 2/6 + 1/6 = 3/6</span>, so <span class="math">R = 2 Ω</span>.</p>
+      <p>Each branch has the full 12 V: <span class="math">I = V/R</span> gives 4 A through the 3 Ω and 2 A through the 6 Ω.</p>
+      <p><b>Answer: 2 Ω, 4 A and 2 A, total 6 A.</b> Check: <span class="math">12/2 = 6</span>. Always check that way.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>A ball is dropped from 5 m. How fast is it going when it lands?</summary>
+    <div class="ans">
+      <p>Energy: <span class="math">mgh = ½mv²</span>, so the mass cancels and <span class="math">v = √(2gh) = √(2 × 10 × 5) = √100</span>.</p>
+      <p><b>Answer: 10 m/s.</b> Saying "the mass cancels" is worth as much as the number &mdash; it shows you know why.</p>
+    </div>
+  </details>
+
+  <h3>The 90-minute crash course</h3>
+  <table>
+    <tbody>
+      <tr><td><b>0–15 min</b></td><td>Read the eight cards above. Cover the answers and say each one aloud once.</td></tr>
+      <tr><td><b>15–30 min</b></td><td>Write Newton's three laws from memory, twice. This is the rescue question &mdash; it must be automatic.</td></tr>
+      <tr><td><b>30–60 min</b></td><td>Do the six worked questions on paper without looking. Then check, and mark only the unit conversions.</td></tr>
+      <tr><td><b>60–75 min</b></td><td>Say the five-step script out loud for a question you cannot do. Practise being stuck without going quiet.</td></tr>
+      <tr><td><b>75–90 min</b></td><td>Design one experiment on paper using the five questions: spring, wire, pendulum, or cooling. Any of them.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <p><b>If you blank in the room.</b> Say: "Can I have ten seconds to think?" Then use the script. Interviewers at this school have watched candidates freeze and then recover; the recovery is the thing they remember. What they do not forgive is pretending to know something you don't, because the next question exposes it.</p>
+  </div>
+</section>
+
+<!-- ============ 8 CRAM ============ -->
+<section id="s-cram">
+  <p class="kicker">Print this</p>
+  <h1>Saturday cram sheet</h1>
+  <p class="lead">One side of A4. Physics on the left, sketches in the middle, computing on the right. Print it and take it in your bag &mdash; the sheet prints on its own, without the site around it.</p>
+
+  <div class="cram-actions">
+    <button class="tb-btn" type="button" id="printCram">Print this sheet</button>
+    <span>or press Cmd/Ctrl + P from this tab</span>
+  </div>
+
+  <div class="sheet" id="cramSheet">
+    <div class="sh-head">
+      <div>
+        <b>St Paul's School 16+ &mdash; interview cram sheet</b>
+        <span class="sub">Saturday 21 November 2026 &middot; 09:00&ndash;13:30 &middot; ~20 minutes per interview &middot; one sheet of questions each time</span>
+      </div>
+      <div class="sh-tag">You will not finish the sheet</div>
+    </div>
+
+    <div class="sh-cols">
+
+      <div>
+        <h4>Newton's three laws</h4>
+        <ol class="laws">
+          <li>An object stays at rest, or moves at constant velocity, unless a <b>resultant force</b> acts.</li>
+          <li><b>F = ma</b> &mdash; resultant force equals mass times acceleration.</li>
+          <li>If A pushes B, B pushes A equally and oppositely &mdash; on a <b>different body</b>.</li>
+        </ol>
+
+        <h4>The eight physics things</h4>
+        <ul>
+          <li><b>Weight &ne; mass.</b> <span class="k">W = mg</span>, g = 10. A 1 N weight is <b>0.1 kg</b>.</li>
+          <li><b>F = ma</b> uses the <b>resultant</b>, not the applied force.</li>
+          <li><b>Laws 1&ndash;3</b> above &mdash; the rescue question when you stall.</li>
+          <li><b>Energy</b> moves between stores, never "lost": <span class="k">KE = &frac12;mv&sup2;</span>, <span class="k">GPE = mgh</span>. Ends as heat.</li>
+          <li><b>Circuits:</b> <span class="k">V = IR</span>, <span class="k">P = VI</span>. Series: current same. Parallel: voltage same, resistance smaller.</li>
+          <li><b>Motion:</b> <span class="k">v = u + at</span>, <span class="k">v&sup2; = u&sup2; + 2as</span>, <span class="k">s = &frac12;(u+v)t</span>. Constant acceleration only.</li>
+          <li><b>Graphs:</b> on v&ndash;t, gradient = acceleration, area = distance.</li>
+          <li><b>Any experiment:</b> what you measure and with what &rarr; the relationship &rarr; independent / dependent / control &rarr; what could go wrong &rarr; how you'd improve it.</li>
+        </ul>
+
+        <h4>Formulas</h4>
+        <div class="formulas">
+          <span>W = mg</span><span>F = ma</span>
+          <span>KE = &frac12;mv&sup2;</span><span>GPE = mgh</span>
+          <span>v = u + at</span><span>v&sup2; = u&sup2; + 2as</span>
+          <span>V = IR</span><span>P = VI</span>
+        </div>
+      </div>
+
+      <div>
+        <h4>Graph shapes to sketch</h4>
+        <div class="fig">
+          <figure>
+            <svg viewBox="0 0 80 58" role="img" aria-label="Upward parabola with turning point marked">
+              <line x1="10" y1="48" x2="74" y2="48" stroke="#bbb" stroke-width="1"/>
+              <line x1="14" y1="6" x2="14" y2="54" stroke="#bbb" stroke-width="1"/>
+              <path d="M20 12 C30 52 50 52 60 12" fill="none" stroke="#9b1c2c" stroke-width="1.8"/>
+              <circle cx="40" cy="44" r="2" fill="#9b1c2c"/>
+              <line x1="40" y1="44" x2="40" y2="48" stroke="#9b1c2c" stroke-width="1" stroke-dasharray="1.5 1.5"/>
+            </svg>
+            <figcaption>y = x&sup2; + bx + c &mdash; complete the square for the turning point</figcaption>
+          </figure>
+          <figure>
+            <svg viewBox="0 0 80 58" role="img" aria-label="Cubic curve with three roots">
+              <line x1="10" y1="48" x2="74" y2="48" stroke="#bbb" stroke-width="1"/>
+              <line x1="14" y1="6" x2="14" y2="54" stroke="#bbb" stroke-width="1"/>
+              <path d="M16 50 C24 50 25 16 33 16 C41 16 42 42 50 42 C58 42 62 16 70 8" fill="none" stroke="#9b1c2c" stroke-width="1.8"/>
+            </svg>
+            <figcaption>y = x&sup3; + &hellip; &mdash; S-shape, up to 3 roots and 2 turning points</figcaption>
+          </figure>
+          <figure>
+            <svg viewBox="0 0 80 58" role="img" aria-label="Sideways parabola opening to the right">
+              <line x1="10" y1="30" x2="74" y2="30" stroke="#bbb" stroke-width="1"/>
+              <line x1="18" y1="6" x2="18" y2="54" stroke="#bbb" stroke-width="1"/>
+              <path d="M22 8 C64 16 64 44 22 52" fill="none" stroke="#9b1c2c" stroke-width="1.8"/>
+            </svg>
+            <figcaption>x = y&sup2; &minus; 3y + 2 &mdash; opens <b>right</b>, roots at y = 1, 2</figcaption>
+          </figure>
+          <figure>
+            <svg viewBox="0 0 80 58" role="img" aria-label="Reciprocal curve with two branches">
+              <line x1="8" y1="30" x2="74" y2="30" stroke="#bbb" stroke-width="1"/>
+              <line x1="40" y1="6" x2="40" y2="54" stroke="#bbb" stroke-width="1"/>
+              <path d="M46 8 C58 11 65 17 69 27" fill="none" stroke="#9b1c2c" stroke-width="1.8"/>
+              <path d="M34 52 C22 49 15 43 11 33" fill="none" stroke="#9b1c2c" stroke-width="1.8"/>
+            </svg>
+            <figcaption>y = 1/x &mdash; two branches, never touches either axis</figcaption>
+          </figure>
+          <figure>
+            <svg viewBox="0 0 80 58" role="img" aria-label="Modulus graph, a V shape">
+              <line x1="10" y1="48" x2="74" y2="48" stroke="#bbb" stroke-width="1"/>
+              <line x1="14" y1="6" x2="14" y2="54" stroke="#bbb" stroke-width="1"/>
+              <path d="M18 12 L40 46 L62 12" fill="none" stroke="#9b1c2c" stroke-width="1.8"/>
+            </svg>
+            <figcaption>y = |x &minus; 1| &mdash; a V; the corner is where the bracket is 0</figcaption>
+          </figure>
+          <figure>
+            <svg viewBox="0 0 80 58" role="img" aria-label="Velocity time graph, straight line and area shaded">
+              <line x1="10" y1="48" x2="74" y2="48" stroke="#bbb" stroke-width="1"/>
+              <line x1="14" y1="6" x2="14" y2="54" stroke="#bbb" stroke-width="1"/>
+              <path d="M18 44 L62 14 L62 44 Z" fill="#f6e6e9" stroke="none"/>
+              <path d="M18 44 L62 14" fill="none" stroke="#9b1c2c" stroke-width="1.8"/>
+              <line x1="62" y1="14" x2="62" y2="48" stroke="#9b1c2c" stroke-width="1" stroke-dasharray="1.5 1.5"/>
+            </svg>
+            <figcaption>v&ndash;t: gradient = acceleration, shaded area = distance</figcaption>
+          </figure>
+        </div>
+
+        <h4>The five-step script</h4>
+        <ol>
+          <li><b>Name what's asked.</b> "You want the acceleration."</li>
+          <li><b>List what you have.</b> "Force 1 N, and it weighs 1 N."</li>
+          <li><b>Name the equation.</b> "F = ma, so I need the mass."</li>
+          <li><b>Convert and substitute aloud.</b> "Weight 1 N &rarr; 0.1 kg &rarr; a = 10."</li>
+          <li><b>Check and state the assumption.</b> "About g &mdash; assuming g = 10, no friction."</li>
+        </ol>
+        <p style="font-size:10px;color:#444">Truly stuck: <i>"I don't know this one &mdash; can I talk through what I'd try?"</i></p>
+      </div>
+
+      <div>
+        <h4>The three computing puzzles</h4>
+        <p><b>1. Number 1&ndash;100, higher or lower.</b> <b>Seven</b> guesses: 2&#8310; = 64 &lt; 100 &le; 2&#8311; = 128. Name it &mdash; binary search &mdash; and say it needs an ordered list, and that doubling the range adds one guess.</p>
+        <p><b>2. Ten-digit number:</b> first digit = how many 0s, second = how many 1s, and so on. Answer <b>6210001000</b>. Check: six 0s, two 1s, one 2, one 6.</p>
+        <p><b>3. Why learn C?</b> It shows the machine &mdash; pointers, the stack, the heap. Operating systems, firmware and language runtimes are still written in it, and it makes every other language stop being magic. Caveat: you wouldn't build a web app in it; that's why Rust exists.</p>
+
+        <h4>Say this, not that</h4>
+        <ul>
+          <li>"<b>Assuming</b> g = 10 and no air resistance."</li>
+          <li>"The <b>gradient</b> here is the acceleration."</li>
+          <li>"I'll <b>try a small case</b> first."</li>
+          <li>Not "it's hard to explain" &mdash; explain it badly instead.</li>
+        </ul>
+
+        <h4>In the room</h4>
+        <ul>
+          <li>Three or four questions done is what offer-holders report. <b>Slow and right.</b></li>
+          <li>Take the hint the instant it's offered &mdash; that's the test.</li>
+          <li>Between interviews, note one thing that went well, then reset.</li>
+          <li>Ask for ten seconds rather than going silent.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="sh-foot">
+      <span>Recovery is what they remember. A bluff is what they expose.</span>
+      <span>Answers hidden by default on the site &mdash; use self-test mode.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9 READING ============ -->
+<section id="s-reading">
+  <p class="kicker">Genuine sources</p>
+  <h1>What is actually worth reading</h1>
+  <p class="lead">No puff, no tutor funnels. These are the real documents: the inspection report, the school's own accounts, and the head's own writing and interviews. Nothing here is about the 16+ interview specifically &mdash; that remains unpublished &mdash; but these are the sources that let you talk about the school as though you have read something.</p>
+
+  <div class="note">
+    <p><b>Start with two.</b> If you only have twenty minutes: read the <b>ISI report</b> (below) and listen to <b>Heads &amp; Tales</b>. The first gives you a sentence about teaching that you can quote, and the second gives you the High Master's argument in her own voice.</p>
+  </div>
+
+  <div class="reading">
+
+    <div class="r-item">
+      <h3><a href="https://reports.isi.net/DownloadReport.aspx?r=ROU7036_20250114.pdf&amp;s=7036&amp;t=c" target="_blank" rel="noopener">ISI inspection report, January 2025</a> <span class="badge b-off">official</span></h3>
+      <p class="meta">Independent Schools Inspectorate &middot; 14&ndash;16 January 2025 &middot; nine inspectors, two and a half days &middot; PDF, 17 pages</p>
+      <p>The only independent, evidence-based account of what this school's teaching is actually like. Inspectors sat in lessons, watched societies, and spoke to pupils. All five standards met.</p>
+      <p><b>Quotable line:</b> &ldquo;Teachers have considerable knowledge in their subjects which they use to <b>generate intellectual curiosity</b> in the pupils they teach.&rdquo;</p>
+      <p><b>And:</b> &ldquo;The school is ambitious academically and pupils respond well to high academic expectations.&rdquo; Co-curricular provision is called &ldquo;a significant strength&rdquo;, with pupils achieving &ldquo;extremely well, including in national competitions&rdquo;.</p>
+      <div class="use"><b>Use it like this:</b> do not recite it. If asked why you want to come, &ldquo;the inspectors noticed that teachers use their subject knowledge to generate curiosity, and that is the kind of lesson I want&rdquo; is a sentence no other candidate will say.</div>
+      <p class="meta" style="margin-top:10px">Honest note: the report's one criticism is that PSHE in the senior school &ldquo;does not engage pupils consistently&rdquo;. Knowing that is a sign you read it rather than skimmed the school's press release.</p>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://prd-ds-register-of-charities.charitycommission.gov.uk/en/charity-search" target="_blank" rel="noopener">Annual report and financial statements, year to 31 August 2025</a> <span class="badge b-off">official</span></h3>
+      <p class="meta">St Paul's School, filed with the Charity Commission &middot; 2026 &middot; PDF &mdash; the link opens the register; search &ldquo;St Paul's School&rdquo; and open its accounts</p>
+      <p>The unglamorous document with the hardest numbers in it. In their own words: A Level A*/A was &ldquo;the best on record since COVID&rdquo;; at GCSE and IGCSE <b>68% of grades were 9</b> and 90% were 8 or 9; the school calls itself &ldquo;comfortably the highest performing all boys school in the UK&rdquo;. Of 2025 leavers going to UK universities, 95% to the Russell Group, with <b>44 to Oxford or Cambridge</b>; 38 to the US. <b>147 pupils</b> received bursary awards.</p>
+      <div class="use"><b>Use it like this:</b> these are the figures to have if you want to sound informed without sounding like a league-table printout. One number, with its source, is plenty.</div>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://www.stpaulsschool.org.uk/the-challenges-facing-young-men/" target="_blank" rel="noopener">&ldquo;The Challenges Facing Young Men&rdquo; &mdash; by Mrs Huang</a> <span class="badge b-art">article</span></h3>
+      <p class="meta">St Paul's School news &middot; 5 June 2026 &middot; ~800 words</p>
+      <p>Her response to Sir Gareth Southgate's documentary on young men. This is the clearest statement of the school's case for being a boys' school, written by the person who might interview you.</p>
+      <p><b>Quotable:</b> &ldquo;Traditional all boys' schools such as my own <b>have been part of the problem in the past</b>... But that is not our ethos now.&rdquo; And on structure: a &ldquo;centuries old vertical tutor system where 13-year-old boys are in the same group as 18-year-olds&rdquo;.</p>
+      <div class="use"><b>Use it like this:</b> if asked &ldquo;why a boys' school?&rdquo;, the strong answer is hers, not &ldquo;better results&rdquo;: vertical tutoring, older boys as role models, and the freedom to be kind without an audience. Say you read her piece and disagreed with one part &mdash; that is a real conversation.</div>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://www.schoolmanagementplus.com/wellbeing-students-staff/research-can-change-the-narrative-around-boys-and-young-men/" target="_blank" rel="noopener">&ldquo;Research can help change bleak narratives around boys&rdquo;</a> <span class="badge b-art">article</span></h3>
+      <p class="meta">School Management Plus &middot; 5 October 2026 &middot; 6 minute read &middot; by Sally-Anne Huang</p>
+      <p>Longer and more personal than the school's own piece: twenty years of advocating for girls, then arriving at St Paul's and asking who speaks for the boys. She calls the debate &ldquo;not a zero-sum game&rdquo;.</p>
+      <div class="use"><b>Use it like this:</b> the best single thing to read if you expect a pastoral or general interview. It tells you what she believes and how she argues, which is more useful than any list of questions.</div>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://www.oppidaneducation.com/heads-and-tales/sally-anne-huang-high-master-of-st-pauls-school-on-why-we-must-push-back-on-the-catastrophised-picture-of-educating-young-men" target="_blank" rel="noopener">Heads &amp; Tales &mdash; Sally-Anne Huang</a> <span class="badge b-pod">podcast</span></h3>
+      <p class="meta">Oppidan Education &middot; 9 September 2026 &middot; 25 minutes</p>
+      <p>The most recent long interview with her, recorded as the Research Centre for the Education of Boys opened. Covers why she thinks single-sex schooling works, why she believes the conversation about young men has become &ldquo;catastrophised&rdquo;, and what boys need: &ldquo;tribe, role models and the freedom to be kind&rdquo;.</p>
+      <div class="use"><b>Use it like this:</b> listen at 1.25&times; on the way to school. You are listening for how she phrases things, because the interview will sound like this.</div>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://www.castfox.net/podcast/education-corner-podcast-7104290/episode/mrs-sally-anne-huang-high-master-at-st-pauls-school-4004991" target="_blank" rel="noopener">Education Corner &mdash; Sally-Anne Huang</a> <span class="badge b-pod">podcast</span></h3>
+      <p class="meta">Education Choices Magazine &middot; 19 March 2026 &middot; 29 minutes</p>
+      <p>More concrete than the others: the school's &ldquo;intellectual culture&rdquo;, the <b>Founder's Awards</b> and what they changed, and diversity of thought in the classroom. Useful if you are applying for a bursary or want to understand how the school talks about access.</p>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://podcasts.apple.com/gb/podcast/exclusive-interview-with-sally-anne-huang-high-master/id1475086776?i=1000502233339" target="_blank" rel="noopener">EdQuarter: The Education Station &mdash; first interview as High Master</a> <span class="badge b-pod">podcast</span></h3>
+      <p class="meta">EdQuarter &middot; 13 December 2020 &middot; 30 minutes</p>
+      <p>Recorded three months into the job, during the exams crisis, when she was also chairing HMC. Valuable for one reason: it shows her under pressure, being blunt about government communication. Less useful for the school itself.</p>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://www.stpaulsschool.org.uk/about-st-pauls/st-pauls-school-research-centre-for-the-education-of-boys/" target="_blank" rel="noopener">Research Centre for the Education of Boys</a> <span class="badge b-off">official</span></h3>
+      <p class="meta">St Paul's School &middot; announced 3 November 2025, opens September 2026</p>
+      <p>The launch page and the news piece announcing the St Paul's School Group. Her line: &ldquo;As the UK's most academic boys' school we have much to contribute to improving education for all young men.&rdquo;</p>
+      <div class="use"><b>Use it like this:</b> this is the newest thing the school is doing, so almost no candidate will mention it. &ldquo;The Research Centre for the Education of Boys &mdash; is that feeding into how you teach here already?&rdquo; is a genuinely good question to ask an interviewer.</div>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://www.westminster.org.uk/admissions/16-entry-westminster-school" target="_blank" rel="noopener">Westminster's 16+ admissions page</a> <span class="badge b-oth">other school</span></h3>
+      <p class="meta">Westminster School &middot; 2027 entry &middot; official</p>
+      <p>Worth reading precisely because St Paul's publishes so little: Westminster states its interview day in full &mdash; <b>15-minute interviews in each of the four examination subjects, a 15-minute general interview, and a 45-minute &ldquo;Interview Day Assessment&rdquo;</b>. That is what a comparable school is willing to tell you, and it makes St Paul's silence conspicuous.</p>
+      <div class="use"><b>Why it's here:</b> not to cite. It is here to calibrate your expectation of what the day will look like, nothing more.</div>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://www.goodschoolsguide.co.uk/uk-schools/advice/preparing-for-private-school-interviews" target="_blank" rel="noopener">&ldquo;Preparing for private school interviews&rdquo;</a> <span class="badge b-art">article</span></h3>
+      <p class="meta">The Good Schools Guide &middot; updated 2023</p>
+      <p>The genuinely independent version of all the advice the tutors sell. Its sixth-form point is the useful one: at this age it is &ldquo;considered seriously uncool to brag&rdquo;, so candidates tend to play achievements down &mdash; and the skill is putting them on the table without boasting.</p>
+      <div class="use"><b>Use it like this:</b> read it instead of any tutor blog. Same advice, no sales funnel.</div>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://www.enjoyeducation.co.uk/blog/more-than-an-interview-what-16-entry-really-tests" target="_blank" rel="noopener">&ldquo;More Than an Interview: What 16+ Entry Really Tests&rdquo;</a> <span class="badge b-art">article</span></h3>
+      <p class="meta">Enjoy Education &middot; 16 September 2025</p>
+      <p>A tutor firm, but an unusually honest one: it names what other schools actually do &mdash; Winchester asking abstract or philosophical questions, City of London handing over an unseen poem &mdash; and concludes that &ldquo;this is not a test of perfection&rdquo; but of how clearly you think and how well you listen.</p>
+      <div class="use"><b>Use it like this:</b> for the general interview, where the failure mode is trying to sound finished rather than thinking out loud.</div>
+    </div>
+
+    <div class="r-item">
+      <h3><a href="https://www.isc.co.uk/schools/england/london-area/london-borough-of-merton/barnes/st-pauls-school" target="_blank" rel="noopener">ISC school profile</a> <span class="badge b-off">official</span></h3>
+      <p class="meta">Independent Schools Council &middot; listing</p>
+      <p>Short and factual, and it gives you the founding detail in the school's own words: Erasmus &ldquo;advised Colet in the original planning of St Paul's School and wrote textbooks for the School's use&rdquo;. Handy if you want a historical hook that isn't Halley.</p>
+    </div>
+
+  </div>
+
+  <h3>What does not exist, after a proper search</h3>
+  <div class="note warn">
+    <p><b>No genuine article describes the St Paul's 16+ interview.</b> Not in the press, not in the school's magazine, not on any education site. The only first-hand material anywhere is the two Student Room accounts this file is built on, and the school publishes one paragraph about the day. Everything else claiming to be &ldquo;past interview questions&rdquo; is a template &mdash; the BlackStone case is documented on the Sources tab.</p>
+    <p>So treat this tab as background that makes you sound like someone who has read about the school, not as interview intelligence. The interview intelligence is on the Questions and Interview tabs, and it is thin because the evidence is thin.</p>
+  </div>
+</section>
+
+<!-- ============ 10 PLAN ============ -->
+
+<section id="s-plan">
+  <p class="kicker">Monday 16 to Saturday 21 November</p>
+  <h1>The five days, in order of what helps most</h1>
+  <p class="lead">Ninety minutes a day, maximum. You are not learning physics or maths from scratch &mdash; you are practising saying what you already half-know, out loud, while someone interrupts you.</p>
+
+  <div class="note">
+    <p><b>Three rules for the week.</b> Everything is done <b>aloud</b>, standing up, with a pen and paper. Nothing is read silently twice. And every session ends by writing one sentence: what did I get wrong and what is the fix?</p>
+  </div>
+
+  <h3>Monday &mdash; the statement, and the graphs</h3>
+  <div class="card">
+    <p><b>Session 1 (35 min): write the five statement answers.</b> They are the fixed questions, about 100 words each:</p>
+    <ol>
+      <li>Why St Paul's? &mdash; one specific thing (a society, the Toller Prize, the electron microscope), and what you would do with it.</li>
+      <li>Co-curriculars at your current school &mdash; what you do, and what you get from it, not a list.</li>
+      <li>A character strength with a <b>recent</b> example &mdash; one incident, dated, with what you actually did.</li>
+      <li>Something you find tricky and how you would improve it &mdash; a real weakness with a mechanism, not a humblebrag.</li>
+      <li>One of the five values with a situation &mdash; kindness, respect, humility, integrity or resilience.</li>
+    </ol>
+    <p>Then read all five aloud once. Every claim in them is a question you have volunteered for, so cut anything you could not evidence in the room.</p>
+    <p><b>Session 2 (25 min): graph sketching.</b> Sketch, labelling intercepts and turning points, saying the method out loud: <span class="math">y = x² + 2x − 3</span>; <span class="math">y = (x−2)³</span>; <span class="math">x = y² − 4</span>; <span class="math">y = 1/x</span>. The sideways parabola is the one they actually used.</p>
+    <p><b>Done when:</b> you can do the sideways parabola in under 60 seconds without hesitating about which way it opens.</p>
+  </div>
+
+  <h3>Tuesday &mdash; physics rescue, part one</h3>
+  <div class="card">
+    <p><b>Session 1 (30 min): the eight things.</b> Go to <b>Physics rescue</b> and work through cards 1–4 only: weight versus mass, F = ma, Newton's laws, energy. Say each "Say:" line aloud as you read it.</p>
+    <p><b>Session 2 (20 min): Newton's laws from memory.</b> Write all three, twice, then say them to someone. This is the exact question an interviewer used to rescue a frozen candidate &mdash; it is the one thing that must be automatic.</p>
+    <p><b>Session 3 (15 min): the weight trap.</b> Do these in your head, aloud: a 0.3 N object's mass; a 5 N force on a 500 g trolley; a 2 kg mass hanging on a string.</p>
+    <p><b>Done when:</b> you never say "1 N is 1 kg", and the three laws come out in order without prompting.</p>
+  </div>
+
+  <h3>Wednesday &mdash; physics rescue, part two, and a timed sheet</h3>
+  <div class="card">
+    <p><b>Session 1 (30 min): cards 5–8.</b> Circuits, motion equations, graphs, and the five experiment questions. Do the six worked questions on the physics page on paper, then check them and mark only the unit conversions.</p>
+    <p><b>Session 2 (20 min): timed sheet practice.</b> This is the format rehearsal. Take eight questions from the Questions tab, set a timer for 15 minutes, and work them on paper while narrating &mdash; out loud, to a wall or a person. <b>Stop at 15 minutes, finished or not.</b> The real sheet is longer than the time; the skill is being calm about that.</p>
+    <p><b>Session 3 (10 min): the script.</b> Take one question you cannot do and say the five-step script anyway: what is asked, what I have, which equation, substitute, sanity-check.</p>
+    <p><b>Done when:</b> you have run out of time on purpose and did not panic, and you can design an experiment using the five questions.</p>
+  </div>
+
+  <h3>Thursday &mdash; maths aloud, and computing</h3>
+  <div class="card">
+    <p><b>Session 1 (35 min): the reported maths interview.</b> Do the four reported questions in order, out loud, on paper: quadratic with turning point, cubic, <span class="math">x = y² − 3y + 2</span>, and the substitution one. Then the last five minutes of the real interview: <em>"why did you take GCSE maths early, and what do you do in maths lessons now?"</em> Answer both properly.</p>
+    <p><b>Session 2 (25 min): computing, out loud.</b> The binary search question (7 guesses, and why); the self-descriptive number <b>6210001000</b> reconstructed from scratch; "why C" in four sentences; and one project explained in 45 seconds &mdash; what it does, one design decision, one bug you fixed.</p>
+    <p><b>Session 3 (10 min): trace a loop on paper.</b> Write a six-line loop, then trace it by hand and say each variable's value as it changes. If they hand you code, this is what they are watching.</p>
+    <p><b>Done when:</b> you can explain your own project without saying "it's kind of hard to explain".</p>
+  </div>
+
+  <h3>Friday &mdash; the mock, then stop</h3>
+  <div class="card">
+    <p><b>Session 1 (30 min): a real mock.</b> Someone else asks you six questions from the Questions tab. Their rules: they may interrupt, ask "why?" three times, and change one number mid-question. Yours: never go silent for more than five seconds, and if you are stuck, use the script.</p>
+    <p><b>Session 2 (20 min): the general interview.</b> Rehearse, aloud: why St Paul's; what challenges you would face and how you would overcome them; what makes you laugh; what motivates you; what you do in your free time. The second one is the only hard one &mdash; a real challenge plus a mechanism.</p>
+    <p><b>Session 3 (15 min): two questions to ask them.</b> About their subject, not admissions. Write them down and take them with you.</p>
+    <p><b>Then stop.</b> No new material after Friday lunchtime. Re-read the statement, the three laws, and the graph shapes, and go to bed.</p>
+  </div>
+
+  <h3>Saturday &mdash; the day</h3>
+  <div class="card">
+    <ul>
+      <li><b>Leave with 30 minutes spare</b> for Lonsdale Road, Barnes SW13 9JT. Hammersmith Bridge traffic is real and the school will not move your slot.</li>
+      <li><b>Take:</b> your statement, a pen, water, and a book. You may sit in a classroom between interviews with staff coming to you.</li>
+      <li><b>Between interviews, do not debrief.</b> Note one thing that went well, then reset. Replaying a bad question is how a good morning turns into a bad one.</li>
+      <li><b>You will not finish the sheet.</b> Three or four questions is what offer-holders report. Slow and right beats fast and wrong, and stopping to explain your method is what the format is designed to see.</li>
+      <li><b>If you blank:</b> ask for ten seconds, then start the script. Recovery is what they remember.</li>
+    </ul>
+  </div>
+
+  <div class="note warn">
+    <p><b>One structural warning.</b> The offer is conditional on eight grade-7 GCSEs, six at grade 8 or 9, including your A Level subjects. Saturday decides whether you get the offer; August decides whether you keep it.</p>
+  </div>
+</section>
+
+<!-- ============ 11 SOURCES ============ -->
+<section id="s-sources">
+  <p class="kicker">Where this came from</p>
+  <h1>Sources, and what I could not find</h1>
+  <p class="lead">Everything here is public. Nothing came from inside the school. Where a fact could not be confirmed, it is marked rather than smoothed over.</p>
+
+  <h3>The school's own material</h3>
+  <ul>
+    <li>16+ admissions pages: selection procedure, important dates, international applicants, admissions policy</li>
+    <li>Physics and Computing sample papers (read in full), and the Maths entry-exam post on the SPS Mathematics Blog by the Head of Mathematics</li>
+    <li>Department pages for Mathematics, Physics and Computer Science: results, competitions, societies, equipment</li>
+    <li>Eighth Form Subject Choices 2026–27: boards, syllabuses, course expectations</li>
+    <li>A Level Results 2026; exam results pages; University Destinations 2026</li>
+    <li>History and Archives; the Apposition page; mission and values</li>
+    <li>Societies list; Partnerships pages; Research Centre for the Education of Boys</li>
+    <li>Recruitment adverts for Teacher of Mathematics, Teacher of Computing and Head of Physics — the source for heads of department, contact addresses and how the departments describe themselves</li>
+    <li>Charitable company accounts to August 2025: bursary numbers, leaver destinations, outreach figures</li>
+  </ul>
+
+  <h3>Interview accounts (reported, not official)</h3>
+  <ul>
+    <li>The Student Room, thread 7551880, &ldquo;How I got into St Paul's 16+&rdquo; &mdash; five ~20-minute interviews, the physics sheet of eight, the maths graph questions, the binary-search and self-descriptive-number questions, the general interview, and the five personal-statement questions</li>
+    <li>The Student Room, thread 7546030, &ldquo;St Paul's 16+ Interview&rdquo; (2025 entry) &mdash; maths: cubic and quadratic graphs, then Intermediate Maths Challenge-style problems; physics: a practical with a five-question sheet</li>
+    <li>The Student Room, thread 7643182 &mdash; &ldquo;St Paul's was calm&rdquo;, an offer-holder's summary of the day</li>
+    <li>Thread 7551880 also settles Further Maths: the candidate took Maths <em>and</em> Further Maths and had a single maths interview, so Further Maths appears to be folded into the maths slot rather than examined separately</li>
+    <li>St Paul's School, 16+ selection procedure page &mdash; interviews by subject heads of department, the Saturday timetable, the written statement in advance, and the confirmation that Maths and Further Maths sit <b>one</b> paper</li>
+  </ul>
+
+  <h3>Staff research and writing</h3>
+  <ul>
+    <li>LSE Mathematics PhD alumni destinations — confirms Dr Luis Cereceda teaches at St Paul's</li>
+    <li>His PhD thesis <em>Mixing Graph Colourings</em> (LSE, 2008); papers in the <em>Journal of Graph Theory</em> (2011) and <em>Theoretical Computer Science</em> (2009); the Wikipedia article on Cereceda's conjecture</li>
+    <li>Iva Franjić's paper on means, <em>Numerical Algebra, Control and Optimization</em> 2(2), 2012</li>
+    <li>Ben Still: Springer Nature interview about <em>Particle Physics Brick by Brick</em>; <em>Physics World</em> and <em>School Library Journal</em> reviews</li>
+    <li>Katie Douglass: Onshape customer story; the Engineering Society podcast "So, You Want to be an Engineer?"</li>
+    <li>Adrian Hemery's report on the IMO training camp &mdash; useful as evidence that the camp happened, but it credits the training to Dr Stoyanov, and Hemery has since left the school; Perse Coding Team Challenge credits for Chris Harrison</li>
+    <li>Sally-Anne Huang: Oppidan <em>Heads &amp; Tales</em> interview (2026); her article "The Challenges Facing Young Men" (2026); HMC blog (2020)</li>
+    <li>Public LinkedIn profiles, marked as self-reported where used</li>
+  </ul>
+
+  <h3>Primary sources for the staff findings</h3>
+  <p>Four documents that decide specific questions about who teaches what. Each one says only what it says &mdash; I have not stretched them further.</p>
+  <ul>
+    <li><b><a href="https://www.tes.com/jobs/vacancy/head-of-physics-richmond-upon-thames-2175051" target="_blank" rel="noopener">TES, &ldquo;Head of Physics&rdquo;, closed 27 February 2025</a></b>, with its companion <a href="https://www.tes.com/jobs/vacancy/teacher-of-physics-richmond-upon-thames-2175083" target="_blank" rel="noopener">Teacher of Physics</a> advert of the same date. <b>Proves:</b> that Dr Ryan Buckingham held the post &mdash; the advert directs enquiries to &ldquo;the current Head of Physics, Dr Ryan Buckingham&rdquo; on his school address &mdash; and that the job was advertised for a September 2025 start with interviews on 4 March 2025, so it was filled. It also fixes the department's size at &ldquo;ten full time physicists&rdquo; with &ldquo;two full time technicians&rdquo;. <b>What it does not say:</b> the name of his successor. No source does.</li>
+    <li><b><a href="https://www.iypt.org/wp-content/uploads/2025/07/UK-application.pdf" target="_blank" rel="noopener">International Young Physicists' Tournament, UK member-organisation application, July 2025</a></b>. <b>Proves:</b> St Paul's applied in its own name for national membership of the IYPT, and names <b>Simon Parsons</b> as the person committing to act as team leader, giving the 2025 tournament as his most recent participation. This is the only public evidence of who leads a physics team at the school &mdash; not proof of a head-of-department title, and the card says so.</li>
+    <li><b><a href="https://iai.tv/articles/the-philosopher-and-the-ocean-auid-658" target="_blank" rel="noopener">IAI News, &ldquo;The Philosopher and the Ocean&rdquo;, 27 March 2016</a></b>. <b>Proves:</b> Rufus Duits's own byline, which gives his title as &ldquo;Head of Philosophy at St. Paul's School, London&rdquo;. That is why his card calls him Head of Philosophy; the school's staff page lists him only as a member of the theology and philosophy department.</li>
+    <li><b><a href="https://www.stpaulsschool.org.uk/three-pupils-invited-to-imo-training-camp" target="_blank" rel="noopener">School news, &ldquo;Three pupils invited to IMO training camp&rdquo;, 11 March 2024</a></b>. <b>Proves:</b> that the Olympiad preparation belongs to <b>Dr Zhivko Stoyanov</b> &mdash; the school thanks &ldquo;the amazing work of Dr Zhivko Stoyanov in preparing these (and a myriad of other) boys&rdquo; &mdash; and that Dr Hemery's role was to write the report. This is the source that corrects an earlier draft of this file, which credited the programme to the author rather than the teacher. Included here because a correction without its evidence is just another assertion.</li>
+  </ul>
+
+  <div class="note danger">
+    <p><b>What I could not confirm</b></p>
+    <ul>
+      <li><b>Who is Head of Physics now.</b> The school advertised the post for September 2025 and has never announced the appointment.</li>
+      <li><b>Background for most staff.</b> Nine of twelve physicists have no public profile. Neither does the Head of Mathematics, beyond his own blog post.</li>
+      <li><b>Official interview questions beyond maths.</b> Only the nine maths questions are published by the school. The physics and computing questions are candidate reports, each resting on one account, and the Further Maths arrangement is inferred from one candidate's timetable.</li>
+      <li><b>Any second account of the computing interview.</b> I searched The Student Room, Reddit, tutor sites, school-review sites and Chinese-language forums. There is one, and it is the one used here.</li>
+      <li><b>The numerical problem-solving paper.</b> No sample has ever been published.</li>
+    </ul>
+  </div>
+
+  <h3>Sources I read and deliberately did not use</h3>
+  <ul>
+    <li><b>BlackStone Tutors, &ldquo;St Paul's School 16+ Interview Questions and Answers&rdquo;.</b> Read in full, then set aside. The questions are not St Paul's-specific: the same list appears on their pages for Highgate, Eton, Harrow, Westminster, Marlborough, Eltham, Francis Holland and LAE, all published within three days of each other in January&ndash;February 2024. The clearest proof that it is a template is their <b>Brampton Manor</b> page, which offers &ldquo;Past Interview Questions&rdquo; for a school that, in its own words, &ldquo;does not routinely interview&rdquo;. And their model answer to &ldquo;why this school&rdquo; leans on &ldquo;rich history dating back to 1509&rdquo; and &ldquo;notable alumni&rdquo; &mdash; the two things the Head of Mathematics and the High Master have both said they do not want to hear.</li>
+    <li><b>Superprof's St Paul's guide.</b> Its 103-divided-by-2 question and its unseen-poem analysis belong to the <b>13+</b> interview, not the 16+. The same page mixes the two entry points together.</li>
+    <li><b>Keystone Tutors.</b> Largely 13+/ISEB; its interview list is the generic &ldquo;favourite subject, hobbies, why us&rdquo; set.</li>
+    <li><b>Owl Tutors.</b> Explicitly describes the 13+ interview. Its advice that boys should not be &ldquo;trained&rdquo; is sound, and is quoted on the interview page.</li>
+  </ul>
+  <p>None of these is dishonest. They are marketing pages, and their incentive is to look authoritative to a parent, not to be accurate about one school's interview. Where I have used their material it is the structural detail that can be checked against the school's own pages.</p>
+
+  <p><small>Compiled 16 November 2026. Not affiliated with St Paul's School. Dates shift year to year — check the school's admissions pages before relying on any of them.</small></p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Research file for the St Paul's School 16+ interview, 21 November 2026. Facts are labelled Confirmed, Likely or Unconfirmed. Not affiliated with the school.</div>
+</footer>
+
+<script>
+(function(){
+  var tabs = [].slice.call(document.querySelectorAll('nav button'));
+  var panels = [].slice.call(document.querySelectorAll('main section'));
+
+  function show(id){
+    tabs.forEach(function(b){ b.setAttribute('aria-selected', b.dataset.tab === id ? 'true' : 'false'); });
+    panels.forEach(function(p){ p.classList.toggle('on', p.id === 's-' + id); });
+    window.scrollTo({top:0, behavior:'smooth'});
+    if (history.replaceState) history.replaceState(null, '', '#' + id);
+  }
+  tabs.forEach(function(b){ b.addEventListener('click', function(){ show(b.dataset.tab); }); });
+
+  var initial = (location.hash || '').replace('#','');
+  if (initial) {
+    var match = tabs.filter(function(b){ return b.dataset.tab === initial; })[0];
+    if (match) show(initial);
+  }
+
+  // accordions
+  document.querySelectorAll('.person-head').forEach(function(h){
+    h.addEventListener('click', function(){
+      var body = h.nextElementSibling;
+      var open = !body.hasAttribute('hidden');
+      body.toggleAttribute('hidden', open);
+      h.setAttribute('aria-expanded', String(!open));
+      h.closest('.person').classList.toggle('open', !open);
+    });
+  });
+
+  // filters
+  var filters = document.querySelectorAll('#filters button');
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filters.forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      var f = btn.dataset.f;
+      document.querySelectorAll('#people article.person').forEach(function(a){
+        var keep = f === 'all' || a.dataset.dept.indexOf(f) !== -1;
+        a.classList.toggle('hide', !keep);
+      });
+    });
+  });
+
+  // countdown
+  var target = new Date(2026, 10, 21, 9, 0, 0);
+  var el = document.getElementById('days');
+  if (el){
+    var d = Math.ceil((target - new Date()) / 86400000);
+    el.textContent = d > 0 ? d : '0';
+  }
+})();
+</script>
+<script>
+/* self-test mode: timer + hidden answers + per-question reveal */
+(function(){
+  function fmt(ms){
+    var t = Math.floor(ms/1000), m = Math.floor(t/60), s = t%60;
+    return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+  }
+  document.querySelectorAll('.testbar').forEach(function(bar){
+    var sec   = bar.closest('section');
+    var cards = [].slice.call(sec.querySelectorAll('details.qa'));
+    var btn   = bar.querySelector('.tb-btn');
+    var hud   = sec.querySelector('.testhud');
+    if(!hud || !btn) return;
+    var timeEl = hud.querySelector('.time');
+    var metaEl = hud.querySelector('.meta');
+    var startB = hud.querySelector('.start');
+    var resetB = hud.querySelector('.reset');
+    var on = false, running = false, base = 0, started = 0, iv = null;
+
+    function now(){ return running ? base + (Date.now() - started) : base; }
+    function paint(){ timeEl.textContent = fmt(now()); }
+    function progress(){
+      var n = cards.filter(function(c){ return c.open; }).length;
+      metaEl.textContent = n + ' of ' + cards.length + ' revealed';
+    }
+    function start(){
+      running = true; started = Date.now(); startB.textContent = 'Pause';
+      if(!iv) iv = setInterval(paint, 250);
+      paint();
+    }
+    function pause(){
+      base = now(); running = false; startB.textContent = 'Start';
+      if(iv){ clearInterval(iv); iv = null; }
+      paint();
+    }
+    startB.addEventListener('click', function(){ running ? pause() : start(); });
+    resetB.addEventListener('click', function(){
+      base = 0; started = Date.now();
+      paint();
+      cards.forEach(function(c){ c.open = false; });
+      progress();
+    });
+
+    function addReveal(c){
+      if(c.__reveal) return;
+      var sum = c.querySelector('summary');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'reveal';
+      b.textContent = 'Reveal answer';
+      b.addEventListener('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        c.open = !c.open;
+      });
+      sum.appendChild(b);
+      c.__reveal = b;
+      c.addEventListener('toggle', function(){
+        b.textContent = c.open ? 'Hide answer' : 'Reveal answer';
+        c.classList.toggle('revealed', c.open);
+        progress();
+      });
+      sum.addEventListener('click', function(e){
+        if(sec.classList.contains('testing')) e.preventDefault();
+      });
+    }
+
+    function enable(){
+      on = true;
+      sec.classList.add('testing');
+      btn.setAttribute('aria-pressed','true');
+      btn.textContent = 'Exit self-test';
+      cards.forEach(function(c){ c.open = false; addReveal(c); });
+      base = 0; paint(); start(); progress();
+    }
+    function disable(){
+      on = false;
+      sec.classList.remove('testing');
+      btn.setAttribute('aria-pressed','false');
+      btn.textContent = 'Start self-test';
+      pause(); base = 0; paint();
+      cards.forEach(function(c){
+        if(c.__reveal){ c.__reveal.remove(); c.__reveal = null; }
+        c.classList.remove('revealed');
+      });
+    }
+    btn.addEventListener('click', function(){ on ? disable() : enable(); });
+    paint();
+  });
+})();
+</script>
+<script>
+/* print only the cram sheet */
+(function(){
+  var btn = document.getElementById('printCram');
+  function clear(){ document.body.classList.remove('print-cram'); }
+  if(btn){
+    btn.addEventListener('click', function(){
+      document.body.classList.add('print-cram');
+      window.print();
+      setTimeout(clear, 800);
+    });
+  }
+  window.addEventListener('afterprint', clear);
+})();
+</script>
+</body>
+</html>
