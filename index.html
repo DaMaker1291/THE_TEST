@@ -1439,10 +1439,15 @@
 
   <details class="qa"><summary>How many flips until you expect to see HH, and how many until HT?</summary>
     <div class="ans">
-      <span class="lbl">Practice · genuinely surprising, and a favourite of interviewers</span>
+      <span class="lbl">Practice · a classic puzzle, and no evidence it is used here</span>
       <p><b>HH takes 6 flips on average; HT takes 4.</b> Both patterns are equally likely in any given pair of flips, which is why the answer feels wrong.</p>
       <p><b>Why:</b> think in states. For HT, once you have an H you are &ldquo;halfway&rdquo;; a T finishes, and an H keeps you halfway &mdash; you never lose progress. For HH, a tail after an H throws you back to the start, because the tail breaks the pair entirely. That wasted progress is the extra two flips.</p>
-      <p><b>Say this:</b> &ldquo;The difference is what happens on failure. After a head, a tail completes HT but destroys HH.&rdquo; That is the whole insight, and it generalises: <span class="math">E = 2 + 2·2 = 6</span> for HH, <span class="math">E = 2 + 2 = 4</span> for HT.</p>
+      <p><b>Say this:</b> &ldquo;The difference is what happens on failure. After a head, a tail completes HT but destroys HH.&rdquo; Then write the arithmetic, because &ldquo;about six&rdquo; is a guess and they will ask.</p>
+      <p><b>Set it up.</b> Let <span class="math">E</span> be the expected number of flips from the start, and <span class="math">H</span> the expected number <em>given the last flip was a head</em>. Waiting for a first head takes 2 flips on average, so in both cases</p>
+      <p><span class="math">E = 2 + H</span></p>
+      <p><b>HT:</b> from <span class="math">H</span>, a tail finishes immediately (0 more) and a head leaves you exactly where you were, so <span class="math">H = 1 + ½H</span>. That gives <span class="math">H = 2</span>, and <span class="math">E = 2 + 2 = 4</span>.</p>
+      <p><b>HH:</b> from <span class="math">H</span>, a head finishes (0 more) but a tail sends you back to the start &mdash; not to <span class="math">H</span> &mdash; so <span class="math">H = 1 + ½E</span>. Substituting into the first line: <span class="math">E = 2 + 1 + ½E</span>, so <span class="math">½E = 3</span> and <span class="math">E = 6</span>.</p>
+      <p>The single line that differs between the two cases is what a tail does: keeps you in place for HT, wipes the slate for HH. Everything else is the same equation.</p>
     </div>
   </details>
 
@@ -2034,6 +2039,9 @@
     <p><b>Session 1 (30 min): cards 5–8.</b> Circuits, motion equations, graphs, and the five experiment questions. Do the six worked questions on the physics page on paper, then check them and mark only the unit conversions.</p>
     <p><b>Session 2 (20 min): timed sheet practice.</b> This is the format rehearsal. Take eight questions from the Questions tab, set a timer for 15 minutes, and work them on paper while narrating &mdash; out loud, to a wall or a person. <b>Stop at 15 minutes, finished or not.</b> The real sheet is longer than the time; the skill is being calm about that.</p>
     <p><b>Session 3 (10 min): the script.</b> Take one question you cannot do and say the five-step script anyway: what is asked, what I have, which equation, substitute, sanity-check.</p>
+    <p><b>Session 4 (15 min): thinking problems, timed.</b> Questions tab, then <b>Thinking problems</b>. Pick six and set a timer: the three coin questions (three heads in a row; at least one head; HH versus HT), the kettle, the shrinking question, and the paper folding. For each one say the assumption, give a rough number, then check whether it is sane. <b>Three written lines maximum per question</b> &mdash; this is practice at thinking aloud, not at writing essays.</p>
+    <p>If a card holds you for more than three minutes, read the answer and move on. The point is the first thirty seconds of each, which is all an interviewer gives you before they interrupt.</p>
+    <p><b>Done when:</b> you can do the shrinking one in a single sentence &mdash; &ldquo;area squares but volume cubes, so the load on each bit of bone goes up tenfold&rdquo; &mdash; and you have said the HH answer out loud with its <span class="math">E = 2 + H</span> line rather than guessing six.</p>
     <p><b>Done when:</b> you have run out of time on purpose and did not panic, and you can design an experiment using the five questions.</p>
   </div>
 
