@@ -1162,7 +1162,7 @@
   <details class="qa"><summary>Sketch a cubic</summary>
     <div class="ans">
       <span class="lbl">Reported · second question</span>
-      <p>Shape first, then detail. For a positive <span class="math">x³</span> term: comes up from the bottom left, goes down to top right, and has at most three roots and two turning points.</p>
+      <p>Shape first, then detail. For a positive <span class="math">x³</span> term the curve runs from the bottom left to the top right, climbing through at most two turning points, and it can cross the x-axis up to three times.</p>
       <p>Use <span class="math">y = x(x−1)(x+1) = x³ − x</span>: roots at −1, 0, 1; crosses at 0; turning points between them. Say "it must cross the x-axis at least once, because a cubic is continuous and goes from −∞ to +∞".</p>
       <p><b>Trap:</b> a cubic with a repeated root (<span class="math">y = x²(x−1)</span>) only touches at zero. Mention that and you have shown you know more than the shape.</p>
     </div>
@@ -1395,6 +1395,161 @@
       <p><small>They are marking the structure: what you assume, what you can bound, how you check the answer is sane.</small></p>
     </div>
   </div>
+  <h2 style="font-size:1.25rem;margin:34px 0 6px">Thinking problems &mdash; coins, joules, shrinking</h2>
+  <p>None of these is a past St Paul's question: the school publishes almost nothing and candidates report maths and physics sheets, not puzzles. They are here because interviewers at this level fall back on problems like these when they want to see you <em>think</em> rather than recall &mdash; and because every one of them can be talked through out loud, which is the whole test. <b>Practice</b> means I wrote or adapted it; <b>Classic</b> means it is a standard puzzle you may well meet in some form.</p>
+  <p><b>How to be marked well on any of them:</b> say what you are assuming, do the arithmetic roughly, then check whether the answer is sane. An estimate that is out by a factor of two but honestly reasoned beats a memorised number.</p>
+
+  <h3 style="font-size:1.05rem;margin:24px 0 8px">Probability and coins</h3>
+
+  <details class="qa"><summary>A fair coin lands heads three times. What is the chance the next flip is heads?</summary>
+    <div class="ans">
+      <span class="lbl">Practice · the gambler's fallacy</span>
+      <p><b>One half.</b> The coin has no memory. What is genuinely unlikely is four heads <em>in a row</em> before you start &mdash; one in sixteen. But once the first three have happened, the fourth flip is still a fresh event.</p>
+      <p>The sentence to say: &ldquo;The probability of the sequence was 1/16, but the conditional probability of the next flip given what has already happened is still 1/2.&rdquo; That distinction &mdash; <em>before</em> versus <em>given</em> &mdash; is exactly what they are listening for.</p>
+      <p><b>If they push:</b> &ldquo;Then why do casinos make money?&rdquo; Because the house edge applies to thousands of independent bets, not because a machine is due. Long-run average, not cosmic fairness.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>I flip a coin 100 times and get 60 heads. Is the coin fair?</summary>
+    <div class="ans">
+      <span class="lbl">Practice · the best answer is a number, not a yes</span>
+      <p>Assume fair, and ask how surprising 60 is. With 100 flips the count has mean 50 and standard deviation <span class="math">√(100 × ½ × ½) = 5</span>. So 60 is two standard deviations out.</p>
+      <p>Roughly 2% of fair runs reach 60 or more &mdash; about one in fifty. That is <b>suspicious, not proof</b>. One trial in fifty happens all the time; you would want more flips, or a test comparing all the counts to the expected shape.</p>
+      <p><b>Say this:</b> &ldquo;Sixty is about two standard deviations above the mean, so it is unlikely under fairness but not impossible. I would not conclude the coin is biased from one run of a hundred.&rdquo; Then, if you want to be impressive: &ldquo;and I would have decided <em>before</em> flipping what count would convince me.&rdquo;</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Two coins are flipped. At least one is heads. What is the chance both are?</summary>
+    <div class="ans">
+      <span class="lbl">Classic · conditional probability</span>
+      <p><b>One third.</b> List the four equally likely outcomes: HH, HT, TH, TT. &ldquo;At least one head&rdquo; rules out TT, leaving three. Of those, only HH has two heads.</p>
+      <p>The mistake is to think the answer is a half, by fixing one coin as heads and then looking at the other. That treats &ldquo;the coin that is heads&rdquo; as if it were a labelled coin, when the information does not tell you which one it is.</p>
+      <p><b>Make it concrete:</b> if you are told at least one is heads, you have learned one of three equally likely states. Probability is counting, done carefully.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Three doors, one prize. You pick one, the host opens a different door showing nothing, and offers a swap. Should you?</summary>
+    <div class="ans">
+      <span class="lbl">Classic · Monty Hall</span>
+      <p><b>Yes &mdash; swapping wins two times in three.</b> Your first pick was right one time in three, so it is wrong two times in three. The host always has an empty door he can open, and his choice carries no new information about <em>your</em> door; it only concentrates the remaining probability onto the other one.</p>
+      <p>Thirty doors makes it obvious: pick one, the host opens twenty-eight empties, and asks whether you want to swap to the single unopened one. You would swap instantly.</p>
+      <p><b>The condition that matters:</b> the host knows where the prize is and must open an empty door. If he opened a door at random and happened to find it empty, the answer changes to a half. Saying that unprompted is the difference between knowing the puzzle and understanding it.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>How many flips until you expect to see HH, and how many until HT?</summary>
+    <div class="ans">
+      <span class="lbl">Practice · genuinely surprising, and a favourite of interviewers</span>
+      <p><b>HH takes 6 flips on average; HT takes 4.</b> Both patterns are equally likely in any given pair of flips, which is why the answer feels wrong.</p>
+      <p><b>Why:</b> think in states. For HT, once you have an H you are &ldquo;halfway&rdquo;; a T finishes, and an H keeps you halfway &mdash; you never lose progress. For HH, a tail after an H throws you back to the start, because the tail breaks the pair entirely. That wasted progress is the extra two flips.</p>
+      <p><b>Say this:</b> &ldquo;The difference is what happens on failure. After a head, a tail completes HT but destroys HH.&rdquo; That is the whole insight, and it generalises: <span class="math">E = 2 + 2·2 = 6</span> for HH, <span class="math">E = 2 + 2 = 4</span> for HT.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>In a room of 23 people, what is the chance two share a birthday?</summary>
+    <div class="ans">
+      <span class="lbl">Classic · and the answer is over half</span>
+      <p><b>About 50.7%.</b> The trick is to count pairs, not people: 23 people make <span class="math">23 × 22 / 2 = 253</span> pairs, and each pair is a birthday match with probability 1/365.</p>
+      <p>Also worth saying: the question you would naturally ask &mdash; &ldquo;does anyone share <em>my</em> birthday?&rdquo; &mdash; is a much smaller probability, because that fixes one person. The difference between those two questions is the entire puzzle.</p>
+    </div>
+  </details>
+
+  <h3 style="font-size:1.05rem;margin:24px 0 8px">Energy and joules</h3>
+
+  <details class="qa"><summary>How much energy does it take to boil a kettle, and how long does that take?</summary>
+    <div class="ans">
+      <span class="lbl">Practice · the anchor for every energy question</span>
+      <p>Half a litre of water, from 20&nbsp;&deg;C to 100&nbsp;&deg;C, with specific heat capacity 4200&nbsp;J per kg per &deg;C:</p>
+      <p><span class="math">E = mcΔT = 0.5 × 4200 × 80 = 168,000 J ≈ 170 kJ</span>.</p>
+      <p>A 3&nbsp;kW kettle delivers 3000&nbsp;J every second, so about <b>56 seconds</b>. That is why kettles are fast: power is energy per second, and 3&nbsp;kW is a lot.</p>
+      <p><b>The sanity check to say out loud:</b> 0.17&nbsp;MJ is about 47 watt-hours, roughly 3% of a unit of electricity. Cheap, plausible, and you have just shown you check answers rather than trusting them.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>A Mars bar is about 230 kcal. How far up a hill would that carry a 70 kg person?</summary>
+    <div class="ans">
+      <span class="lbl">Practice · energy in, potential energy out</span>
+      <p>230&nbsp;kcal is <span class="math">230 × 4200 ≈ 970,000 J</span> (a food calorie is a kilocalorie, 4200 joules).</p>
+      <p>Set <span class="math">mgh = E</span>: <span class="math">h = 970,000 / (70 × 10) ≈ 1,400 m</span>. Ben Nevis is 1,345&nbsp;m &mdash; so one chocolate bar, one mountain.</p>
+      <p><b>Now the honest caveat, which is what makes the answer good:</b> muscles are only about 25% efficient, so in practice you get roughly a quarter of that, about 350&nbsp;m. Say the caveat before they ask. It is the same instinct as checking units.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>A 1 kg ball has 100 J of kinetic energy. How fast is it going, and how high would it rise?</summary>
+    <div class="ans">
+      <span class="lbl">Practice · two formulas, one idea</span>
+      <p>From <span class="math">KE = ½mv²</span>: <span class="math">100 = ½ × 1 × v²</span>, so <span class="math">v² = 200</span> and <span class="math">v ≈ 14 m/s</span> (about 30&nbsp;mph).</p>
+      <p>From <span class="math">GPE = mgh</span>: <span class="math">100 = 1 × 10 × h</span>, so <span class="math">h = 10 m</span>.</p>
+      <p><b>The line that shows understanding:</b> &ldquo;The height does not depend on the mass, because mass cancels &mdash; a 1&nbsp;kg and a 10&nbsp;kg ball with the same energy rise to different heights, but the same <em>speed</em> gives the same height.&rdquo; Work out which quantity is being held fixed: that is the whole skill.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Estimate the power of a person walking up stairs.</summary>
+    <div class="ans">
+      <span class="lbl">Practice · a Fermi question with a clean answer</span>
+      <p>Say you are 70&nbsp;kg and climb 3&nbsp;m in 5&nbsp;s. Energy is <span class="math">mgh = 70 × 10 × 3 = 2,100 J</span>. Power is <span class="math">2100 / 5 ≈ 400 W</span>.</p>
+      <p>That is four times resting metabolic rate (about 100&nbsp;W), which is why stairs feel like effort and why they are a decent test of fitness.</p>
+      <p><b>Why interviewers like it:</b> there is no single right number. They are watching whether you pick sensible values, keep the units straight, and then compare the answer to something known &mdash; a light bulb, a kettle, a person at rest.</p>
+    </div>
+  </details>
+
+  <h3 style="font-size:1.05rem;margin:24px 0 8px">Shrinking and scaling</h3>
+
+  <details class="qa"><summary>If you were shrunk to one tenth of your height, keeping your shape, what would happen to you?</summary>
+    <div class="ans">
+      <span class="lbl">Practice · the best scaling question there is</span>
+      <p>Length ÷10, so <b>area ÷100</b> and <b>volume &mdash; and therefore mass &mdash; ÷1000</b>. Your bones' cross-section falls by 100 while your weight falls by 1000, so the load per unit of bone is <b>ten times worse</b>. Your legs would snap under you.</p>
+      <p>Everything else follows from the same ratio. Heat is lost through surface area but generated in volume, so you would lose heat ten times faster relative to your size and freeze. You would also be far stronger for your weight &mdash; which is why ants are, and why the film version of shrinking a person is fantasy.</p>
+      <p><b>Say this:</b> &ldquo;Area scales as the square and volume as the cube, so any property that compares them changes.&rdquo; Then name one consequence. That single sentence is the answer to about five different questions.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>An ant can carry 50 times its own weight. Could it, scaled up to human size?</summary>
+    <div class="ans">
+      <span class="lbl">Practice · same idea, run backwards</span>
+      <p>Muscle force goes with cross-section, so it scales as length squared. Mass goes as length cubed. Scale an ant up by a factor of 100: force ×10,000, mass ×1,000,000.</p>
+      <p>So its carrying capacity collapses from 50 times its weight to <span class="math">50 × 10,000 / 1,000,000 = 0.5</span> times &mdash; it could not lift itself, let alone fifty of itself. Giant ants are impossible for the same reason elephants have thick legs and cannot jump.</p>
+      <p><b>The general principle:</b> big animals are relatively weaker. Small ones are relatively stronger. That is not a fact to memorise, it is what squares and cubes force.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>How many times would you have to fold a sheet of paper to reach the Moon?</summary>
+    <div class="ans">
+      <span class="lbl">Classic · doubling beats intuition</span>
+      <p>Paper is about 0.1&nbsp;mm thick, and the Moon is 384,400&nbsp;km away &mdash; <span class="math">3.84 × 10⁸ m</span>. Folding doubles the thickness, so you need <span class="math">0.0001 × 2ⁿ ≥ 3.84 × 10⁸</span>, i.e. <span class="math">2ⁿ ≥ 3.84 × 10¹²</span>.</p>
+      <p><span class="math">2⁴¹ ≈ 2.2 × 10¹²</span> is not quite enough; <span class="math">2⁴² ≈ 4.4 × 10¹²</span> is. So <b>42 folds</b>.</p>
+      <p><b>What makes this a good answer:</b> noting that after ten folds you are at a metre and it feels hopeless, and that the last single fold covers half the total distance. Exponential growth is all in the end.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>If the Earth were shrunk to the size of a marble, how far away would the Moon be?</summary>
+    <div class="ans">
+      <span class="lbl">Practice · scale factors, done once</span>
+      <p>Earth's diameter is 12,742&nbsp;km; a marble is about 1&nbsp;cm. That is a scale of roughly <b>1 to 1.3 billion</b>.</p>
+      <p>The Moon is 384,400&nbsp;km away, so at that scale it sits about <b>30 cm</b> from the marble &mdash; roughly a sheet of A4 away, or a forearm's length.</p>
+      <p><b>Then say the thing that lands:</b> that is why almost every diagram of the solar system is wrong. Space is mostly space, and the pictures compress it by orders of magnitude because the truth does not fit on a page.</p>
+    </div>
+  </details>
+
+  <h3 style="font-size:1.05rem;margin:24px 0 8px">Two lateral ones</h3>
+
+  <details class="qa"><summary>Two ropes each burn for exactly 60 minutes, but unevenly. Using only a lighter, measure 45 minutes.</summary>
+    <div class="ans">
+      <span class="lbl">Classic · the answer is in what you are allowed to light</span>
+      <p>Light <b>both ends of rope A</b> and <b>one end of rope B</b> at the same moment.</p>
+      <p>Rope A burns from both ends, so it finishes in <b>30 minutes</b> whatever its unevenness. At that instant, rope B has 30 minutes of burning left &mdash; and now light its other end. Burning from both ends halves the remaining time: <b>15 minutes</b>.</p>
+      <p>30 + 15 = 45. The trick is realising that burning from both ends halves the <em>time</em>, not the length, which is why the unevenness never matters.</p>
+    </div>
+  </details>
+
+  <details class="qa"><summary>Eight coins, one heavier. Find it in two weighings on a balance.</summary>
+    <div class="ans">
+      <span class="lbl">Classic · information, not luck</span>
+      <p>Weigh <b>three against three</b>.</p>
+      <p>If they balance, the heavy coin is one of the two you left out &mdash; weigh them against each other and you are done. If one side is heavier, the coin is in that group of three: weigh one against one, and if they balance it is the third.</p>
+      <p><b>Why two is enough:</b> two weighings have three outcomes each, so nine possible results &mdash; and there are only eight suspects plus the &ldquo;all balanced&rdquo; case. The question is whether you can design a split that uses all nine, which is exactly what three-against-three does.</p>
+    </div>
+  </details>
 </section>
 
 <!-- ============ 7 PHYSICS ============ -->
